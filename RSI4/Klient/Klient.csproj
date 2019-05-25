@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CallbackContrakt\CallbackContrakt.csproj">
+      <Project>{728d8357-4ee4-4b0b-a17c-f949cf07e675}</Project>
+      <Name>CallbackContrakt</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

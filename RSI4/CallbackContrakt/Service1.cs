@@ -60,4 +60,7 @@ namespace CallbackContrakt
             callback.ZwrotSilnia(result);
         }
     }
+
+
+    
 }
