@@ -1,21 +1,45 @@
+using Serwis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Host
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+       
+            static void Main(string[] args)
+            {
+                Uri baseAddress = new Uri("http://localhost:8080/NazwaBazowa");
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
-        }
+                ServiceHost mojHost = new ServiceHost(typeof(IService1), baseAddress);
+
+                try
+                {
+                WSHttpBinding mojBinding = new WSHttpBinding();
+                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(IService1), mojBinding, "endpoint1");    
+
+                    ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+                    smb.HttpGetEnabled = true;
+                    mojHost.Description.Behaviors.Add(smb);
+
+                    mojHost.Open();
+                    Console.WriteLine("Serwis jest uruchomiony");
+                    Console.WriteLine("Naciśnij enter aby zakonczyc");
+                    Console.WriteLine();
+                    Console.ReadLine();
+                    mojHost.Close();
+                }
+                catch (CommunicationException ce)
+                {
+                    Console.WriteLine("Wystąpił wyjątek {0}", ce.Message);
+                    mojHost.Abort();
+                }
+            }
     }
 }
