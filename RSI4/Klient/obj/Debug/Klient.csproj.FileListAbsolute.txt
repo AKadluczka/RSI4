@@ -1,0 +1,7 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\Klient.exe.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\Klient.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\Klient.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.csproj.CoreCompileInputs.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.pdb

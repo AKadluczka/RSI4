@@ -1,0 +1,7 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\bin\Serwis.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\bin\Serwis.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\bin\Serwis.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\obj\Debug\Serwis.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\obj\Debug\Serwis.csproj.CoreCompileInputs.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\obj\Debug\Serwis.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Serwis\obj\Debug\Serwis.pdb

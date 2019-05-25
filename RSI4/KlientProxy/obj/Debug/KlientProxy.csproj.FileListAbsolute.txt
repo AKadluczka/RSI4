@@ -1,0 +1,2 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\obj\Debug\KlientProxy.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\obj\Debug\KlientProxy.csproj.CoreCompileInputs.cache

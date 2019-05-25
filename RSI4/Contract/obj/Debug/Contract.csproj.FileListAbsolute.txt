@@ -1,0 +1,7 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\bin\Debug\Contract.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\bin\Debug\Contract.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\bin\Debug\Contract.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\obj\Debug\Contract.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\obj\Debug\Contract.csproj.CoreCompileInputs.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\obj\Debug\Contract.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract\obj\Debug\Contract.pdb
