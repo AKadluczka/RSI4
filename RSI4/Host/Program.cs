@@ -20,26 +20,46 @@ namespace Host
 
                 ServiceHost mojHost = new ServiceHost(typeof(Service1), baseAddress);
 
-                try
+                Uri adress2 = new Uri("http://localhost:8080/InnySerwis");
+                ServiceHost drugiHost = new ServiceHost(typeof(mojCallbackKalkulator), adress2);
+                WSDualHttpBinding binding2 = new WSDualHttpBinding();
+
+            try
                 {
                 WSHttpBinding mojBinding = new WSHttpBinding();
-                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(IService1), mojBinding, "endpoint1");    
+                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(IService1), mojBinding, "endpoint1");
+
+                ServiceEndpoint endpoint2 = drugiHost.AddServiceEndpoint(typeof(ICallbackKalkulator), binding2, "Callback Kalkulator");
+
 
                     ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                     smb.HttpGetEnabled = true;
                     mojHost.Description.Behaviors.Add(smb);
+
+                    ServiceMetadataBehavior smb2 = new ServiceMetadataBehavior();
+                    smb2.HttpGetEnabled = true;
+                    drugiHost.Description.Behaviors.Add(smb2);
 
                     mojHost.Open();
                     Console.WriteLine("Serwis jest uruchomiony");
                     Console.WriteLine("Naciśnij enter aby zakonczyc");
                     Console.WriteLine();
                     Console.ReadLine();
+
+                    drugiHost.Open();
+                    Console.WriteLine("CallbackKalkulator uruchomiony.");
+                    
+
                     mojHost.Close();
+                    drugiHost.Close();
+
+                    
                 }
                 catch (CommunicationException ce)
                 {
                     Console.WriteLine("Wystąpił wyjątek {0}", ce.Message);
                     mojHost.Abort();
+                    drugiHost.Abort();
                 }
             }
     }
