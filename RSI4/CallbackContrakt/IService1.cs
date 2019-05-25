@@ -20,6 +20,24 @@ namespace CallbackContrakt
         // TODO: dodaj tutaj operacje usługi
     }
 
+    [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ICallbackHandler))]
+    public interface ICallbackKalkulator
+    {
+        [OperationContract(IsOneWay = true]
+        void Silnia(double n);
+        [OperationContract(IsOneWay = true]
+        void ObliczCos(int sek);
+    }
+
+    public interface ICallbackHandler
+    {
+        [OperationContract(IsOneWay = true]
+        void ZwrotSilnia(double n);
+        [OperationContract(IsOneWay = true]
+        void ZwrotObliczCos(String sek);
+    }
+
+
     // Użyj kontraktu danych, jak pokazano w poniższym przykładzie, aby dodać typy złożone do operacji usługi.
     [DataContract]
     public class CompositeType
