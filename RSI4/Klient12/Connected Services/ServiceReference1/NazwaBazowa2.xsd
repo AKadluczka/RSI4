@@ -17,6 +17,20 @@
   </xs:element>
   <xs:element name="nazwa2" nillable="true" type="xs:string" />
   <xs:element name="rozmiar" type="xs:long" />
+  <xs:element name="UploadStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/Message" name="file" type="q2:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadStreamResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getStream">
     <xs:complexType>
       <xs:sequence>
@@ -27,7 +41,7 @@
   <xs:element name="getStreamResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/Message" name="getStreamResult" type="q2:StreamBody" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/Message" name="getStreamResult" type="q3:StreamBody" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -16,6 +16,9 @@ public interface IStrumien
         ResponseFileMessage getMStream(RequestFileMessage request);
 
         [OperationContract]
+        bool UploadStream(Stream file);
+
+        [OperationContract]
     System.IO.Stream getStream(String nazwa);
 }
 

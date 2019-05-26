@@ -22,6 +22,12 @@ namespace Klient12.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
         System.Threading.Tasks.Task<Klient12.ServiceReference1.ResponseFileMessage> getMStreamAsync(Klient12.ServiceReference1.RequestFileMessage request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
+        bool UploadStream(System.IO.Stream file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
+        System.Threading.Tasks.Task<bool> UploadStreamAsync(System.IO.Stream file);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getStream", ReplyAction="http://tempuri.org/IStrumien/getStreamResponse")]
         System.IO.Stream getStream(string nazwa);
         
@@ -121,6 +127,14 @@ namespace Klient12.ServiceReference1 {
             Klient12.ServiceReference1.RequestFileMessage inValue = new Klient12.ServiceReference1.RequestFileMessage();
             inValue.nazwa1 = nazwa1;
             return ((Klient12.ServiceReference1.IStrumien)(this)).getMStreamAsync(inValue);
+        }
+        
+        public bool UploadStream(System.IO.Stream file) {
+            return base.Channel.UploadStream(file);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UploadStreamAsync(System.IO.Stream file) {
+            return base.Channel.UploadStreamAsync(file);
         }
         
         public System.IO.Stream getStream(string nazwa) {

@@ -28,7 +28,8 @@ namespace Klient12
             ZapiszPlik(fs, filePath);
             Console.WriteLine("koniec getMStream");
 
-
+            Stream send = WyslijPlik();
+            client2.UploadStream(send);
 
 
             client2.Close();
@@ -61,6 +62,25 @@ namespace Klient12
             instream.Close();
             Console.WriteLine();
             Console.WriteLine("-->Plik {0} zapisany", filePath);
+        }
+
+        static public System.IO.Stream WyslijPlik()
+        {
+            FileStream myFile;
+            Console.WriteLine("-->wywolano upload");
+            string filePath = Path.Combine(System.Environment.CurrentDirectory, ".\\image.jpg");
+
+            try
+            {
+                myFile = File.OpenRead(filePath);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", filePath));
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+            return myFile;
         }
     }
 }

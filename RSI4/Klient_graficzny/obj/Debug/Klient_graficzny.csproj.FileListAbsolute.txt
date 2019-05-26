@@ -7,3 +7,4 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_gr
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csproj.CoreCompileInputs.cache
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.exe
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.Form1.resources
