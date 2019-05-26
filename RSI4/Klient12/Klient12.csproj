@@ -55,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ServiceReference1\Klient12.ServiceReference1.ResponseFileMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\MojStrumien.wsdl" />
     <None Include="Connected Services\ServiceReference1\NazwaBazowa.xsd">
       <SubType>Designer</SubType>

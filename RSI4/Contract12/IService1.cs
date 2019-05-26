@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -10,13 +11,32 @@ namespace Contract12 {
     [ServiceContract]
 public interface IStrumien
 {
-    [OperationContract]
+
+        [OperationContract]
+        ResponseFileMessage getMStream(RequestFileMessage request);
+
+        [OperationContract]
     System.IO.Stream getStream(String nazwa);
 }
 
 
 
+    [MessageContract]
+    public class RequestFileMessage {
+        [MessageBodyMember]
+        public string nazwa1;
+    }
 
+    [MessageContract]
+    public class ResponseFileMessage
+    {
+        [MessageHeader]
+        public string nazwa2;
+        [MessageHeader]
+        public long rozmiar;
+        [MessageBodyMember]
+        public Stream dane;
+    }
 
     // UWAGA: możesz użyć polecenia „Zmień nazwę” w menu „Refaktoryzuj”, aby zmienić nazwę interfejsu „IService1” w kodzie i pliku konfiguracji.
     [ServiceContract]

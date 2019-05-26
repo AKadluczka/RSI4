@@ -51,7 +51,7 @@ namespace Contract12
             return myFile;
         }
 
-        public System.IO.Stream getMStream(String data) //nie wiem jak to tu ma byc zrobione ;/
+        public ResponseFileMessage getMStream(RequestFileMessage request) //nie wiem jak to tu ma byc zrobione ;/
         {
             ResponseFileMessage wynik = new ResponseFileMessage();
             string nazwa = request.nazwa1;
