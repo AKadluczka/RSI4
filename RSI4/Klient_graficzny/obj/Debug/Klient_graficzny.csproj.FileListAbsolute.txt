@@ -1,0 +1,9 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\bin\Debug\Klient_graficzny.exe.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\bin\Debug\Klient_graficzny.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\bin\Debug\Klient_graficzny.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.Properties.Resources.resources
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csproj.GenerateResource.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csproj.CoreCompileInputs.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.pdb
