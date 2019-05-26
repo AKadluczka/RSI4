@@ -1,10 +1,7 @@
 ﻿using Contract12;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using System.Text;
 
 namespace Host12
 {
@@ -25,7 +22,7 @@ namespace Host12
                 b.MaxReceivedMessageSize = 1000000000;
                 b.MaxBufferSize = 8192;
 
-                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(MojStrumien), b, "endpoint1");
+                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(IStrumien), b, "endpoint1");
 
 
 

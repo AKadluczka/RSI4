@@ -1,0 +1,14 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Host12.exe.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Host12.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Host12.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Contract12.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Service.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Contract12.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Contract12.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Service.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Service.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csproj.CoreCompileInputs.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csproj.CopyComplete
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.pdb
