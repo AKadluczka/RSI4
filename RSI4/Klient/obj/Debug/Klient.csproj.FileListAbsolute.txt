@@ -5,3 +5,10 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.csprojAssemb
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.csproj.CoreCompileInputs.cache
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.exe
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\CallbackContrakt.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\CallbackContrakt.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\CallbackContrakt.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\obj\Debug\Klient.csproj.CopyComplete
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\KlientProxy.exe
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\KlientProxy.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient\bin\Debug\KlientProxy.exe.config

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contract12;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -32,9 +33,7 @@ namespace Host12
                 smb.HttpGetEnabled = true;
                 mojHost.Description.Behaviors.Add(smb);
 
-                ServiceMetadataBehavior smb2 = new ServiceMetadataBehavior();
-                smb2.HttpGetEnabled = true;
-                drugiHost.Description.Behaviors.Add(smb2);
+                
 
                 mojHost.Open();
                 Console.WriteLine("Serwis jest uruchomiony");
@@ -42,12 +41,11 @@ namespace Host12
                 Console.WriteLine();
                 Console.ReadLine();
 
-                drugiHost.Open();
-                Console.WriteLine("CallbackKalkulator uruchomiony.");
+               
 
 
                 mojHost.Close();
-                drugiHost.Close();
+                
 
 
             }
@@ -55,7 +53,7 @@ namespace Host12
             {
                 Console.WriteLine("Wystąpił wyjątek {0}", ce.Message);
                 mojHost.Abort();
-                drugiHost.Abort();
+                
             }
         }
     }

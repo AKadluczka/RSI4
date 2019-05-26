@@ -44,9 +44,9 @@ namespace Host
                     mojHost.Open();
                     Console.WriteLine("Serwis jest uruchomiony");
                     Console.WriteLine("Naciśnij enter aby zakonczyc");
-                drugiHost.Open();
-                Console.WriteLine("CallbackKalkulator uruchomiony.");
-                Console.WriteLine();
+                    drugiHost.Open();
+                    Console.WriteLine("CallbackKalkulator uruchomiony.");
+                    Console.WriteLine();
                     Console.ReadLine();
 
                    
