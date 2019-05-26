@@ -1,0 +1,7 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\obj\Debug\CallbackContrakt.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\obj\Debug\CallbackContrakt.csproj.CoreCompileInputs.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\bin\Debug\CallbackContrakt.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\bin\Debug\CallbackContrakt.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\bin\Debug\CallbackContrakt.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\obj\Debug\CallbackContrakt.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\CallbackContrakt\obj\Debug\CallbackContrakt.pdb

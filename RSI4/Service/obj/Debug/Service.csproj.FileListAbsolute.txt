@@ -1,7 +1,6 @@
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\bin\Debug\Service.dll.config
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\bin\Debug\Service.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\bin\Debug\Service.pdb
-C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\obj\Debug\Service.csprojAssemblyReference.cache
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\obj\Debug\Service.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Service\obj\Debug\Service.pdb

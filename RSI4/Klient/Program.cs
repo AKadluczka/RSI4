@@ -14,19 +14,7 @@ namespace Klient
         static void Main(string[] args)
         {
 
-            /*nie do końca wiem gdzie to dac.
-     * 
-    class CallbackHandler : ICallbacKalkulatorCallback
-    {
-        public void ZwrotSilnia(double result)
-        {
-            Console.WriteLine("silnia = {0}", result);
-        }
-        public void ZwrotObliczCos(String info)
-        {
-            Console.WriteLine("Obliczenia: {0}", info);
-        }
-    }*/
+ 
 
             Console.WriteLine("\nKLIENT2:");
             CallbackHandler mojCallbackHandler = new CallbackHandler();

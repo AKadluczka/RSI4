@@ -9,3 +9,6 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\obj\Debug\Host.pdb
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\bin\Debug\Service.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\bin\Debug\Service.pdb
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\bin\Debug\Service.dll.config
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\bin\Debug\CallbackContrakt.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\bin\Debug\CallbackContrakt.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host\bin\Debug\CallbackContrakt.dll.config

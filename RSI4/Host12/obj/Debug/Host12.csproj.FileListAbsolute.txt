@@ -1,0 +1,2 @@
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csprojAssemblyReference.cache
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csproj.CoreCompileInputs.cache

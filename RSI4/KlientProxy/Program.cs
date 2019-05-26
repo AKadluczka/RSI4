@@ -11,7 +11,7 @@ namespace KlientProxy
     {
         static void Main(string[] args)
         {
-            ServiceClient serwisClient = new SerwisClient("WSHttpBinding_ISerwis");
+            ServiceClient serwisClient = new ServiceClient("WSHttpBinding_ISerwis");
             // The code provided will print ‘Hello World’ to the console.
             // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
             

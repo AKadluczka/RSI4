@@ -23,17 +23,17 @@ namespace CallbackContrakt
     [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ICallbackHandler))]
     public interface ICallbackKalkulator
     {
-        [OperationContract(IsOneWay = true]
+        [OperationContract(IsOneWay = true)]
         void Silnia(double n);
-        [OperationContract(IsOneWay = true]
+        [OperationContract(IsOneWay = true)]
         void ObliczCos(int sek);
     }
 
     public interface ICallbackHandler
     {
-        [OperationContract(IsOneWay = true]
+        [OperationContract(IsOneWay = true)]
         void ZwrotSilnia(double n);
-        [OperationContract(IsOneWay = true]
+        [OperationContract(IsOneWay = true)]
         void ZwrotObliczCos(String sek);
     }
     

@@ -1,4 +1,5 @@
 
+using CallbackContrakt;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Host
             {
                 Uri baseAddress = new Uri("http://localhost:8080/NazwaBazowa");
 
-                ServiceHost mojHost = new ServiceHost(typeof(Service1), baseAddress);
+                ServiceHost mojHost = new ServiceHost(typeof(Service.Service1), baseAddress);
 
                 Uri adress2 = new Uri("http://localhost:8080/InnySerwis");
                 ServiceHost drugiHost = new ServiceHost(typeof(mojCallbackKalkulator), adress2);
@@ -27,7 +28,7 @@ namespace Host
             try
                 {
                 WSHttpBinding mojBinding = new WSHttpBinding();
-                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(IService1), mojBinding, "endpoint1");
+                ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(Service.IService1), mojBinding, "endpoint1");
 
                 ServiceEndpoint endpoint2 = drugiHost.AddServiceEndpoint(typeof(ICallbackKalkulator), binding2, "Callback Kalkulator");
 
