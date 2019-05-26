@@ -16,7 +16,7 @@ namespace Host12
 
             ServiceHost mojHost = new ServiceHost(typeof(MojStrumien), baseAddress);
 
-            
+
 
             try
             {
@@ -33,7 +33,7 @@ namespace Host12
                 smb.HttpGetEnabled = true;
                 mojHost.Description.Behaviors.Add(smb);
 
-                
+
 
                 mojHost.Open();
                 Console.WriteLine("Serwis jest uruchomiony");
@@ -41,11 +41,11 @@ namespace Host12
                 Console.WriteLine();
                 Console.ReadLine();
 
-               
+
 
 
                 mojHost.Close();
-                
+
 
 
             }
@@ -53,7 +53,7 @@ namespace Host12
             {
                 Console.WriteLine("Wystąpił wyjątek {0}", ce.Message);
                 mojHost.Abort();
-                
+
             }
         }
     }
