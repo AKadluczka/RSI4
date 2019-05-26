@@ -44,11 +44,12 @@ namespace Host
                     mojHost.Open();
                     Console.WriteLine("Serwis jest uruchomiony");
                     Console.WriteLine("Naciśnij enter aby zakonczyc");
-                    Console.WriteLine();
+                drugiHost.Open();
+                Console.WriteLine("CallbackKalkulator uruchomiony.");
+                Console.WriteLine();
                     Console.ReadLine();
 
-                    drugiHost.Open();
-                    Console.WriteLine("CallbackKalkulator uruchomiony.");
+                   
                     
 
                     mojHost.Close();
