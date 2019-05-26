@@ -50,6 +50,32 @@ namespace Contract12
             }
             return myFile;
         }
+
+        public System.IO.Stream getMStream(String data) //nie wiem jak to tu ma byc zrobione ;/
+        {
+            ResponseFileMessage wynik = new ResponseFileMessage();
+            string nazwa = request.nazwa1;
+
+            FileStream myFile;
+            Console.WriteLine("-->wywolano getStream");
+
+            wynik.nazwa2 = ".\\image.jpg";
+
+            try
+            {
+                myFile = File.OpenRead(wynik.nazwa2);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", wynik.nazwa2));
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+
+            wynik.rozmiar = myFile.Length;
+            wynik.dane = myFile;
+            return wynik;
+        }
     }
 
 }

@@ -1,5 +1,4 @@
-﻿using Klient12.ServiceReference1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,12 +10,25 @@ namespace Klient12
     {
         static void Main(string[] args)
         {
-            StrumienClient client2 = new StrumienClient();
+            StrumienKlient client2 = new StrumienKlient();
             String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
 
-            Console.WriteLine("Wywoałanie grtStream()");
+            Console.WriteLine("Wywoałanie getStream()");
             System.IO.Stream stream2 = client2.getStream("image.jpg");
             ZapiszPlik(stream2, filePath);
+
+            Console.WriteLine("wywoluje getMStream");
+            Stream fs = null;
+            long rozmiar;
+            string nnn = "image.jpg";
+            nnn = client2.getMStream(nnn, out rozmiar, out fs);
+            filePath = Path.Combine(System.Environment.CurrentDirectory, nnn);
+
+            ZapiszPlik(fs, filePath);
+            Console.WriteLine("koniec getMStream");
+
+
+
 
             client2.Close();
             Console.WriteLine();
