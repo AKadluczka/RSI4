@@ -7,19 +7,7 @@ using System.Threading.Tasks;
 
 namespace Klient
 {
-    /*nie do końca wiem gdzie to dac. 
-     * 
-    class CallbackHandler : ICallbacKalkulatorCallback
-    {
-        public void ZwrotSilnia(double result)
-        {
-            Console.WriteLine("silnia = {0}", result);
-        }
-        public void ZwrotObliczCos(String info)
-        {
-            Console.WriteLine("Obliczenia: {0}", info);
-        }
-    }*/
+    
 
     class Program
     {
@@ -60,6 +48,7 @@ namespace Klient
             Thread.Sleep(5000);
             client2.Close();
             Console.WriteLine("KONIEC KLIENT2");
+
 
             
 
