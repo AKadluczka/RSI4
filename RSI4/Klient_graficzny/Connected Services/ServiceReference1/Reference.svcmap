@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="35a0bc2b-9d06-49f3-a25a-e428c8189be5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/NazwaBazowa" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NazwaBazowa.xsd" MetadataType="Schema" ID="6d01d60d-e0dc-49b3-879b-69f5804e4fd8" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd0" />
+    <MetadataFile FileName="NazwaBazowa1.xsd" MetadataType="Schema" ID="fe0222f3-7ee2-43ae-b9d2-37ac6a0075a1" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd1" />
+    <MetadataFile FileName="NazwaBazowa2.xsd" MetadataType="Schema" ID="d65111dc-a5bd-4353-8d41-a65644cec4f5" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd2" />
+    <MetadataFile FileName="NazwaBazowa3.xsd" MetadataType="Schema" ID="0764f522-bc13-453d-a515-b2d1f7ba7ab9" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd3" />
+    <MetadataFile FileName="MojStrumien.wsdl" MetadataType="Wsdl" ID="6463e8f0-de97-49d7-9222-05de54cb5180" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?wsdl" />
+    <MetadataFile FileName="NazwaBazowa.disco" MetadataType="Disco" ID="339ed965-cc0a-41aa-b335-5d2c9ac9da99" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

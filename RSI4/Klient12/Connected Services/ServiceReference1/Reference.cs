@@ -33,6 +33,12 @@ namespace Klient12.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getStream", ReplyAction="http://tempuri.org/IStrumien/getStreamResponse")]
         System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
+        Contract12.DaneObrazkow[] Lista();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
+        System.Threading.Tasks.Task<Contract12.DaneObrazkow[]> ListaAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -143,6 +149,14 @@ namespace Klient12.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa) {
             return base.Channel.getStreamAsync(nazwa);
+        }
+        
+        public Contract12.DaneObrazkow[] Lista() {
+            return base.Channel.Lista();
+        }
+        
+        public System.Threading.Tasks.Task<Contract12.DaneObrazkow[]> ListaAsync() {
+            return base.Channel.ListaAsync();
         }
     }
 }

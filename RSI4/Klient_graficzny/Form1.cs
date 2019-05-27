@@ -12,14 +12,13 @@ namespace Klient_graficzny
 {
     public partial class Form1 : Form
     {
+        ServiceReference1.StrumienClient client2;
         public Form1()
         {
+            client2 = new ServiceReference1.StrumienClient();
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -21,20 +21,18 @@ namespace CallbackContrakt
     }
 
     [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ICallbackHandler))]
-    public interface ICallbackKalkulator
+    public interface ICallbackLista
     {
+       
         [OperationContract(IsOneWay = true)]
-        void Silnia(double n);
-        [OperationContract(IsOneWay = true)]
-        void ObliczCos(int sek);
+        void ZwrocListe();
     }
 
     public interface ICallbackHandler
     {
         [OperationContract(IsOneWay = true)]
-        void ZwrotSilnia(double n);
-        [OperationContract(IsOneWay = true)]
-        void ZwrotObliczCos(String sek);
+        void ZwrotListy();
+      
     }
     
     

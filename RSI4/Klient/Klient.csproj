@@ -60,10 +60,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ServiceReference1\Klient.ServiceReference1.DaneObrazkow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Klient.ServiceReference1.ResponseFileMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\NazwaBazowa.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\NazwaBazowa1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\NazwaBazowa2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\NazwaBazowa21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
@@ -72,6 +84,18 @@
     </None>
     <None Include="Connected Services\ServiceReference2\InnySerwis1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\InnySerwis2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\InnySerwis21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\Klient.ServiceReference2.DaneObrazkow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\Klient.ServiceReference2.ResponseFileMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\mojCallbackKalkulator.wsdl" />
     <None Include="Properties\DataSources\CallbackContrakt.CompositeType.datasource" />

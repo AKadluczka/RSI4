@@ -5,12 +5,21 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Web;
+using System.Threading;
+using Newtonsoft.Json;
 
 namespace Contract12
 {
+
+   
     // UWAGA: możesz użyć polecenia „Zmień nazwę” w menu „Refaktoryzuj”, aby zmienić nazwę klasy „Service1” w kodzie i pliku konfiguracji.
     public class Service1 : IService1
-    {
+         {
+
+       
+
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -30,8 +39,56 @@ namespace Contract12
         }
     }
 
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    public class CallbackLista : ICallbackLista
+    {
+        public List<DaneObrazkow> result = new List<DaneObrazkow>();
+        ICallbackHandler callback = null;
+
+        public CallbackLista()
+        {
+            callback = OperationContext.Current.GetCallbackChannel<ICallbackHandler>();
+        }
+
+        public void ZwrocListe()
+        {
+            Thread.Sleep(3000);
+            callback.ZwrotListy(result);
+        }
+
+    }
+
+
     public class MojStrumien : IStrumien
     {
+        static public List<DaneObrazkow> baza = CheckFile();
+       
+
+        
+        
+        public void SaveFile() {
+            using (StreamWriter file = File.CreateText(@"C:\path.txt"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+
+                serializer.Serialize(file, baza);
+            }
+
+        }
+
+
+        public static List<DaneObrazkow> CheckFile() {
+            string json = File.ReadAllText(@"C:\path.txt");
+            baza = JsonConvert.DeserializeObject<List<DaneObrazkow>>(json);
+
+            var firstElement = baza.First();
+
+            Console.Write(firstElement.nazwa);
+            Console.Write(firstElement.opis);
+            return baza;
+        }
+
+
         public System.IO.Stream getStream(String data)
         {
             FileStream myFile;
@@ -81,13 +138,16 @@ namespace Contract12
         {
             
             String filePath = Path.Combine(System.Environment.CurrentDirectory,"nowyplik.jpg");
+            DaneObrazkow obiekt = new DaneObrazkow();
+            obiekt.nazwa = "nazwa";
+            obiekt.opis = "opis";
 
+            baza.Add(obiekt);
+            Console.WriteLine("Dodano plik wielkosc: " + baza.Count());
             Console.WriteLine("Wywoałanie uploadu()");
             System.IO.Stream stream2 = file;
             ZapiszPlik(stream2, filePath);
-
-
-            
+            SaveFile();
 
         
             Console.WriteLine("koniec uploadu");
@@ -120,6 +180,20 @@ namespace Contract12
             Console.WriteLine();
             Console.WriteLine("-->Plik {0} zapisany", filePath);
         }
+
+        public List<DaneObrazkow> Lista()
+        {
+            return baza;
+        }
+    }
+    public struct DaneObrazkow
+    {
+        public String nazwa;
+        public String opis;
     }
 
+    
+
 }
+
+

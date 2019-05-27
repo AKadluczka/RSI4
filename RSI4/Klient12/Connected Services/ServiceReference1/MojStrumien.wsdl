@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8080/NazwaBazowa?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/NazwaBazowa?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/NazwaBazowa?xsd=xsd2" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://localhost:8080/NazwaBazowa?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Contract12" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="RequestFileMessage">
@@ -29,6 +30,12 @@
   <wsdl:message name="IStrumien_getStream_OutputMessage">
     <wsdl:part name="parameters" element="tns:getStreamResponse" />
   </wsdl:message>
+  <wsdl:message name="IStrumien_Lista_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lista" />
+  </wsdl:message>
+  <wsdl:message name="IStrumien_Lista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IStrumien">
     <wsdl:operation name="getMStream">
       <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/getMStream" name="RequestFileMessage" message="tns:RequestFileMessage" />
@@ -41,6 +48,10 @@
     <wsdl:operation name="getStream">
       <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/getStream" message="tns:IStrumien_getStream_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStrumien/getStreamResponse" message="tns:IStrumien_getStream_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/Lista" message="tns:IStrumien_Lista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStrumien/ListaResponse" message="tns:IStrumien_Lista_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IStrumien" type="tns:IStrumien">
@@ -67,6 +78,15 @@
     </wsdl:operation>
     <wsdl:operation name="getStream">
       <soap:operation soapAction="http://tempuri.org/IStrumien/getStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lista">
+      <soap:operation soapAction="http://tempuri.org/IStrumien/Lista" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

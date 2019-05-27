@@ -1,9 +1,12 @@
-﻿using Klient12.ServiceReference1;
+﻿using Contract12;
+using Klient12.ServiceReference2;
+using Klient12.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Klient12
 {
@@ -11,7 +14,9 @@ namespace Klient12
     {
         static void Main(string[] args)
         {
-            StrumienClient client2 = new StrumienClient();
+
+            //ServiceReference2.StrumienClient client1 = new ServiceReference2.StrumienClient("WSDualHttpBinding_IStrumien");
+            ServiceReference1.StrumienClient client2 = new ServiceReference1.StrumienClient();
             String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
 
             Console.WriteLine("Wywoałanie getStream()");
@@ -30,7 +35,9 @@ namespace Klient12
 
             Stream send = WyslijPlik();
             client2.UploadStream(send);
-
+            Thread.Sleep(3000);
+            Wyswietl(client2.Lista());
+            
 
             client2.Close();
             Console.WriteLine();
@@ -38,6 +45,16 @@ namespace Klient12
             Console.ReadLine();
         }
 
+        private static void Wyswietl(DaneObrazkow[] daneObrazkow)
+        {
+            
+            List<DaneObrazkow> lista = daneObrazkow.ToList<DaneObrazkow>();
+            Console.WriteLine("Wywołano wyświetlanie " + lista.Count());
+            foreach (DaneObrazkow o in lista)
+            {
+                Console.WriteLine("Nazwa: " + o.nazwa + " ,Opis:" + o.opis);
+            }
+        }
 
         static void ZapiszPlik(System.IO.Stream instream, string filePath)
         {
@@ -81,6 +98,12 @@ namespace Klient12
                 throw ex;
             }
             return myFile;
+        }
+
+        static public void Wyswietl(List<DaneObrazkow> lista) {
+            foreach (DaneObrazkow o in lista) {
+                Console.WriteLine("Nazwa: " + o.nazwa + " ,Opis:" + o.opis);
+            }
         }
     }
 }

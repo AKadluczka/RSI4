@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:8080/NazwaBazowa" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="NazwaBazowa2.xsd" MetadataType="Schema" ID="6fb08064-8736-40d6-9c50-c185398a3d14" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd0" />
     <MetadataFile FileName="NazwaBazowa.xsd" MetadataType="Schema" ID="2bddecc4-ba0e-44d1-ab4d-3711aa90892e" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd1" />
     <MetadataFile FileName="NazwaBazowa1.xsd" MetadataType="Schema" ID="4807c159-df0f-4881-ba0a-9a49f27b416b" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd2" />
-    <MetadataFile FileName="NazwaBazowa.disco" MetadataType="Disco" ID="3a14caaf-59cc-4383-950a-5606179f4713" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?disco" />
-    <MetadataFile FileName="NazwaBazowa2.xsd" MetadataType="Schema" ID="6fb08064-8736-40d6-9c50-c185398a3d14" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd0" />
+    <MetadataFile FileName="NazwaBazowa3.xsd" MetadataType="Schema" ID="366e1788-637d-42ba-aab2-ed0a5d2af478" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd3" />
     <MetadataFile FileName="MojStrumien.wsdl" MetadataType="Wsdl" ID="a5782f3b-49ea-4e06-b926-ceceab3077d0" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?wsdl" />
+    <MetadataFile FileName="NazwaBazowa.disco" MetadataType="Disco" ID="3a14caaf-59cc-4383-950a-5606179f4713" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

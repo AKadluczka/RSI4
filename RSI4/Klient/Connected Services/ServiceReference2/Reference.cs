@@ -9,77 +9,216 @@
 //------------------------------------------------------------------------------
 
 namespace Klient.ServiceReference2 {
+    using System.Runtime.Serialization;
+    using System;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.ICallbackKalkulator", CallbackContract=typeof(Klient.ServiceReference2.ICallbackKalkulatorCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
-    public interface ICallbackKalkulator {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DaneObrazkow", Namespace="http://schemas.datacontract.org/2004/07/Contract12")]
+    [System.SerializableAttribute()]
+    public partial struct DaneObrazkow : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackKalkulator/Silnia")]
-        void Silnia(double n);
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackKalkulator/Silnia")]
-        System.Threading.Tasks.Task SilniaAsync(double n);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nazwaField;
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackKalkulator/ObliczCos")]
-        void ObliczCos(int sek);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string opisField;
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackKalkulator/ObliczCos")]
-        System.Threading.Tasks.Task ObliczCosAsync(int sek);
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nazwa {
+            get {
+                return this.nazwaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nazwaField, value) != true)) {
+                    this.nazwaField = value;
+                    this.RaisePropertyChanged("nazwa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string opis {
+            get {
+                return this.opisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.opisField, value) != true)) {
+                    this.opisField = value;
+                    this.RaisePropertyChanged("opis");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICallbackKalkulatorCallback {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IStrumien")]
+    public interface IStrumien {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackKalkulator/ZwrotSilnia")]
-        void ZwrotSilnia(double n);
+        // CODEGEN: Generating message contract since the wrapper name (RequestFileMessage) of message RequestFileMessage does not match the default value (getMStream)
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
+        Klient.ServiceReference2.ResponseFileMessage getMStream(Klient.ServiceReference2.RequestFileMessage request);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackKalkulator/ZwrotObliczCos")]
-        void ZwrotObliczCos(string sek);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICallbackKalkulatorChannel : Klient.ServiceReference2.ICallbackKalkulator, System.ServiceModel.IClientChannel {
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
+        System.Threading.Tasks.Task<Klient.ServiceReference2.ResponseFileMessage> getMStreamAsync(Klient.ServiceReference2.RequestFileMessage request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
+        bool UploadStream(System.IO.Stream file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
+        System.Threading.Tasks.Task<bool> UploadStreamAsync(System.IO.Stream file);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getStream", ReplyAction="http://tempuri.org/IStrumien/getStreamResponse")]
+        System.IO.Stream getStream(string nazwa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getStream", ReplyAction="http://tempuri.org/IStrumien/getStreamResponse")]
+        System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
+        Klient.ServiceReference2.DaneObrazkow[] Lista();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
+        System.Threading.Tasks.Task<Klient.ServiceReference2.DaneObrazkow[]> ListaAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CallbackKalkulatorClient : System.ServiceModel.DuplexClientBase<Klient.ServiceReference2.ICallbackKalkulator>, Klient.ServiceReference2.ICallbackKalkulator {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RequestFileMessage", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RequestFileMessage {
         
-        public CallbackKalkulatorClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string nazwa1;
+        
+        public RequestFileMessage() {
         }
         
-        public CallbackKalkulatorClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
+        public RequestFileMessage(string nazwa1) {
+            this.nazwa1 = nazwa1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ResponseFileMessage", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ResponseFileMessage {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string nazwa2;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public long rozmiar;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.IO.Stream dane;
+        
+        public ResponseFileMessage() {
         }
         
-        public CallbackKalkulatorClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        public ResponseFileMessage(string nazwa2, long rozmiar, System.IO.Stream dane) {
+            this.nazwa2 = nazwa2;
+            this.rozmiar = rozmiar;
+            this.dane = dane;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IStrumienChannel : Klient.ServiceReference2.IStrumien, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class StrumienClient : System.ServiceModel.ClientBase<Klient.ServiceReference2.IStrumien>, Klient.ServiceReference2.IStrumien {
+        
+        public StrumienClient() {
         }
         
-        public CallbackKalkulatorClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        public StrumienClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
         }
         
-        public CallbackKalkulatorClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
+        public StrumienClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
         }
         
-        public void Silnia(double n) {
-            base.Channel.Silnia(n);
+        public StrumienClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
         }
         
-        public System.Threading.Tasks.Task SilniaAsync(double n) {
-            return base.Channel.SilniaAsync(n);
+        public StrumienClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
         }
         
-        public void ObliczCos(int sek) {
-            base.Channel.ObliczCos(sek);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Klient.ServiceReference2.ResponseFileMessage Klient.ServiceReference2.IStrumien.getMStream(Klient.ServiceReference2.RequestFileMessage request) {
+            return base.Channel.getMStream(request);
         }
         
-        public System.Threading.Tasks.Task ObliczCosAsync(int sek) {
-            return base.Channel.ObliczCosAsync(sek);
+        public string getMStream(string nazwa1, out long rozmiar, out System.IO.Stream dane) {
+            Klient.ServiceReference2.RequestFileMessage inValue = new Klient.ServiceReference2.RequestFileMessage();
+            inValue.nazwa1 = nazwa1;
+            Klient.ServiceReference2.ResponseFileMessage retVal = ((Klient.ServiceReference2.IStrumien)(this)).getMStream(inValue);
+            rozmiar = retVal.rozmiar;
+            dane = retVal.dane;
+            return retVal.nazwa2;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Klient.ServiceReference2.ResponseFileMessage> Klient.ServiceReference2.IStrumien.getMStreamAsync(Klient.ServiceReference2.RequestFileMessage request) {
+            return base.Channel.getMStreamAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Klient.ServiceReference2.ResponseFileMessage> getMStreamAsync(string nazwa1) {
+            Klient.ServiceReference2.RequestFileMessage inValue = new Klient.ServiceReference2.RequestFileMessage();
+            inValue.nazwa1 = nazwa1;
+            return ((Klient.ServiceReference2.IStrumien)(this)).getMStreamAsync(inValue);
+        }
+        
+        public bool UploadStream(System.IO.Stream file) {
+            return base.Channel.UploadStream(file);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UploadStreamAsync(System.IO.Stream file) {
+            return base.Channel.UploadStreamAsync(file);
+        }
+        
+        public System.IO.Stream getStream(string nazwa) {
+            return base.Channel.getStream(nazwa);
+        }
+        
+        public System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa) {
+            return base.Channel.getStreamAsync(nazwa);
+        }
+        
+        public Klient.ServiceReference2.DaneObrazkow[] Lista() {
+            return base.Channel.Lista();
+        }
+        
+        public System.Threading.Tasks.Task<Klient.ServiceReference2.DaneObrazkow[]> ListaAsync() {
+            return base.Channel.ListaAsync();
         }
     }
 }

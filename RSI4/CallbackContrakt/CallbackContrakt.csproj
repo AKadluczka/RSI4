@@ -52,6 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Contract12\Contract12.csproj">
+      <Project>{2E7239B9-1060-4544-908F-AF05166EF1AC}</Project>
+      <Name>Contract12</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{fd8a6e4e-b51c-4532-ab09-bee124833166}</Project>
       <Name>Service</Name>

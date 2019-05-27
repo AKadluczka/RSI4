@@ -22,7 +22,7 @@ namespace Host
                 ServiceHost mojHost = new ServiceHost(typeof(Service.Service1), baseAddress);
 
                 Uri adress2 = new Uri("http://localhost:8080/InnySerwis");
-                ServiceHost drugiHost = new ServiceHost(typeof(mojCallbackKalkulator), adress2);
+                ServiceHost drugiHost = new ServiceHost(typeof(CallbackLista), adress2);
                 WSDualHttpBinding binding2 = new WSDualHttpBinding();
 
             try
@@ -30,7 +30,7 @@ namespace Host
                 WSHttpBinding mojBinding = new WSHttpBinding();
                 ServiceEndpoint endpoint1 = mojHost.AddServiceEndpoint(typeof(Service.IService1), mojBinding, "endpoint1");
 
-                ServiceEndpoint endpoint2 = drugiHost.AddServiceEndpoint(typeof(ICallbackKalkulator), binding2, "Callback Kalkulator");
+                ServiceEndpoint endpoint2 = drugiHost.AddServiceEndpoint(typeof(ICallbackLista), binding2, "Callback Kalkulator");
 
 
                     ServiceMetadataBehavior smb = new ServiceMetadataBehavior();

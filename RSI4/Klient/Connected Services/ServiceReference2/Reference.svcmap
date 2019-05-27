@@ -22,10 +22,12 @@
     <MetadataSource Address="http://localhost:8080/InnySerwis" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="mojCallbackKalkulator.wsdl" MetadataType="Wsdl" ID="0574dee9-b5e0-4ddf-9227-6b9933db5f91" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?wsdl" />
+    <MetadataFile FileName="InnySerwis2.xsd" MetadataType="Schema" ID="b750cd82-93e6-456c-98d0-9a84eb47e406" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?xsd=xsd3" />
     <MetadataFile FileName="InnySerwis.disco" MetadataType="Disco" ID="4faad1cb-b2f4-4cb5-9874-d2d2e712661d" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?disco" />
+    <MetadataFile FileName="mojCallbackKalkulator.wsdl" MetadataType="Wsdl" ID="0574dee9-b5e0-4ddf-9227-6b9933db5f91" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?wsdl" />
     <MetadataFile FileName="InnySerwis.xsd" MetadataType="Schema" ID="dd0f5c5e-c4ad-47d2-93d0-753db2288da3" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?xsd=xsd0" />
     <MetadataFile FileName="InnySerwis1.xsd" MetadataType="Schema" ID="1da9974d-1257-4415-9a81-7f905eef251b" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?xsd=xsd1" />
+    <MetadataFile FileName="InnySerwis21.xsd" MetadataType="Schema" ID="b70fbdbb-92cf-46a2-ba79-ddd97075c27b" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

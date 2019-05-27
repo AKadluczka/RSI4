@@ -12,3 +12,5 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csproj.CoreC
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.csproj.CopyComplete
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.exe
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\obj\Debug\Host12.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Host12\bin\Debug\Newtonsoft.Json.xml

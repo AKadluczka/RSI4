@@ -1,11 +1,24 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using Klient_graficzny.ServiceReference1;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Klient_graficzny
 {
     partial class Form1 : Form
     {
+        
+
+       
+           
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -40,11 +53,12 @@ namespace Klient_graficzny
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
 
-     
 
+        
 
         private void InitializeComponent()
         {
+           
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -139,24 +153,21 @@ namespace Klient_graficzny
 
         private void button1_Click(object sander, EventArgs e)
         {
-            //ladowanie listy obrazów
+            Download(client2);
+            Download2(client2);
         }
 
         private void checkedListBox1_Click(object sander, EventArgs e)
         {
             timer1.Start();
             /* trzeba wyswietlic odpowiednie zdj*/
-            checkedListBox1.CheckedItems.
-            for (int i = 0; i < checkedListBox1.Che; i++)
-
-
-                string path=//sciezka z nacisnietego zdj
-                string text = tekst z nacisnietego zdj
-
-
+            Object obj = checkedListBox1.CheckedItems[0];
+            string path = Path.Combine(System.Environment.CurrentDirectory, "image.jpg");
+            string text = "tekst z nacisnietego zdj";
+           
                     
 
-                pictureBox1.Image = Image.FromFile(path);
+             pictureBox1.Image = Image.FromFile(path);
             textBox1.Text = text;
               
             if (progressBar1.Value > progressBar1.Maximum)
@@ -169,6 +180,105 @@ namespace Klient_graficzny
 
             }
         }
+        private static void Download2(ServiceReference1.StrumienClient client2)
+        {
+
+            String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
+            Console.WriteLine("wywoluje getMStream");
+            Stream fs = null;
+            long rozmiar;
+            string nnn = "image.jpg";
+            nnn = client2.getMStream(nnn, out rozmiar, out fs);
+            filePath = Path.Combine(System.Environment.CurrentDirectory, nnn);
+
+            ZapiszPlik(fs, filePath);
+
+        }
+
+
+        private static void Download(ServiceReference1.StrumienClient client2)
+        {
+
+            String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
+
+
+            System.IO.Stream stream2 = client2.getStream("image.jpg");
+            ZapiszPlik(stream2, filePath);
+        }
+
+
+        private static void Upload(ServiceReference1.StrumienClient client2, String nazwa)
+        {
+            Stream send = WyslijPlik(nazwa);
+            client2.UploadStream(send);
+        }
+
+
+        private static void Wyswietl(DaneObrazkow[] daneObrazkow)
+        {
+
+            List<DaneObrazkow> lista = daneObrazkow.ToList<DaneObrazkow>();
+            Console.WriteLine("Wywołano wyświetlanie " + lista.Count());
+            foreach (DaneObrazkow o in lista)
+            {
+                Console.WriteLine("Nazwa: " + o.nazwa + " ,Opis:" + o.opis);
+            }
+        }
+
+        static void ZapiszPlik(System.IO.Stream instream, string filePath)
+        {
+            const int bufferLength = 8192;
+            int bytecount = 0;
+            int counter = 0;
+
+            byte[] buffer = new byte[bufferLength];
+            Console.WriteLine("--->Zapisuje plik {0}", filePath);
+            FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write);
+
+            while ((counter = instream.Read(buffer, 0, bufferLength)) > 0)
+            {
+                outstream.Write(buffer, 0, counter);
+                Console.Write(".{0}", counter);
+                bytecount += counter;
+            }
+            Console.WriteLine();
+            Console.WriteLine("Zapisano {0} bajtów", bytecount);
+
+            outstream.Close();
+            instream.Close();
+            Console.WriteLine();
+            Console.WriteLine("-->Plik {0} zapisany", filePath);
+        }
+
+        static public System.IO.Stream WyslijPlik(String nazwa)
+        {
+            FileStream myFile;
+            Console.WriteLine("-->wywolano upload");
+            string filePath = Path.Combine(System.Environment.CurrentDirectory, ".\\" + nazwa);
+
+            try
+            {
+                myFile = File.OpenRead(filePath);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", filePath));
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+            return myFile;
+        }
+
+        static public void Wyswietl(List<DaneObrazkow> lista)
+        {
+            foreach (DaneObrazkow o in lista)
+            {
+                Console.WriteLine("Nazwa: " + o.nazwa + " ,Opis:" + o.opis);
+            }
+
+        }
+
+
     }
 }
 

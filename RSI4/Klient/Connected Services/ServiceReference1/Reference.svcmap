@@ -22,10 +22,12 @@
     <MetadataSource Address="http://localhost:8080/NazwaBazowa" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NazwaBazowa.xsd" MetadataType="Schema" ID="6b8ef162-c45a-4566-bbdb-357011f518c5" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd1" />
-    <MetadataFile FileName="NazwaBazowa.disco" MetadataType="Disco" ID="1f5b6571-74bf-4b12-9b76-d857b31b361c" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?disco" />
     <MetadataFile FileName="NazwaBazowa1.xsd" MetadataType="Schema" ID="f4bd673e-564a-4f65-9fba-cf2e37443a1c" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd0" />
+    <MetadataFile FileName="NazwaBazowa.xsd" MetadataType="Schema" ID="6b8ef162-c45a-4566-bbdb-357011f518c5" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd1" />
+    <MetadataFile FileName="NazwaBazowa2.xsd" MetadataType="Schema" ID="d6427a28-dda8-417c-a9b1-6e099f924280" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd2" />
+    <MetadataFile FileName="NazwaBazowa21.xsd" MetadataType="Schema" ID="3328b068-9f78-4011-a376-b4c003ca5a4d" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd3" />
     <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="bbe3b150-6b8e-4603-b4ca-90fe78064692" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?wsdl" />
+    <MetadataFile FileName="NazwaBazowa.disco" MetadataType="Disco" ID="1f5b6571-74bf-4b12-9b76-d857b31b361c" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

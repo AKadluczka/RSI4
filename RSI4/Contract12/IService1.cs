@@ -19,8 +19,27 @@ public interface IStrumien
         bool UploadStream(Stream file);
 
         [OperationContract]
-    System.IO.Stream getStream(String nazwa);
-}
+         System.IO.Stream getStream(String nazwa);
+
+        [OperationContract]
+        List<DaneObrazkow> Lista();
+    }
+
+    [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ICallbackHandler))]
+    public interface ICallbackLista
+    {
+
+        [OperationContract(IsOneWay = true)]
+        void ZwrocListe();
+    }
+
+    public interface ICallbackHandler
+    {
+        [OperationContract(IsOneWay = true)]
+        void ZwrotListy(List<DaneObrazkow> result);
+
+    }
+
 
 
 
