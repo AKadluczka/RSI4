@@ -143,9 +143,19 @@ namespace Contract12
 
         public ResponseFileUpload UploadMStream(RequestFileUpload request)
         {
+            Console.WriteLine("Wywołano mstreamupload");
             List<DaneObrazkow> baza = CheckFile();
             ResponseFileUpload wynik = new ResponseFileUpload();
-
+            Stream myFile = request.dane;
+            String filePath = Path.Combine(System.Environment.CurrentDirectory, request.nazwa);
+            ZapiszPlik(myFile, filePath);
+            DaneObrazkow obiekt = new DaneObrazkow();
+            obiekt.nazwa = request.nazwa;
+            obiekt.opis = request.opis;
+            baza.Add(obiekt);
+            SaveFile(baza);
+            wynik.msg = "Zakonczono";
+            Console.WriteLine("Zakonczono mstreamupload");
 
             return wynik;
         }

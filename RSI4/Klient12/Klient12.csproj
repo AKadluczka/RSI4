@@ -64,6 +64,9 @@
     <None Include="Connected Services\ServiceReference1\Klient12.ServiceReference1.ResponseFileMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\Klient12.ServiceReference1.ResponseFileUpload.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\MojStrumien.wsdl" />
     <None Include="Connected Services\ServiceReference1\NazwaBazowa.xsd">
       <SubType>Designer</SubType>
@@ -88,6 +91,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference2\Klient12.ServiceReference2.ResponseFileMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\Klient12.ServiceReference2.ResponseFileUpload.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Contract12.DaneObrazkow.datasource" />

@@ -153,6 +153,56 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IStrumien_UploadMStream_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="nazwa" Namespace="http://tempuri.org/" />
+          <sp:Header Name="opis" Namespace="http://tempuri.org/" />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="nazwa" Namespace="http://tempuri.org/" />
+          <sp:Header Name="opis" Namespace="http://tempuri.org/" />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IStrumien_UploadMStream_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IStrumien_UploadStream_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -309,6 +359,16 @@
     <wsdl:part name="nazwa2" element="tns:nazwa2" />
     <wsdl:part name="rozmiar" element="tns:rozmiar" />
   </wsdl:message>
+  <wsdl:message name="RequestFileUpload">
+    <wsdl:part name="parameters" element="tns:RequestFileUpload" />
+  </wsdl:message>
+  <wsdl:message name="RequestFileUpload_Headers">
+    <wsdl:part name="nazwa" element="tns:nazwa" />
+    <wsdl:part name="opis" element="tns:opis" />
+  </wsdl:message>
+  <wsdl:message name="ResponseFileUpload">
+    <wsdl:part name="parameters" element="tns:ResponseFileUpload" />
+  </wsdl:message>
   <wsdl:message name="IStrumien_UploadStream_InputMessage">
     <wsdl:part name="parameters" element="tns:UploadStream" />
   </wsdl:message>
@@ -331,6 +391,10 @@
     <wsdl:operation name="getMStream">
       <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/getMStream" name="RequestFileMessage" message="tns:RequestFileMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStrumien/getMStreamResponse" name="ResponseFileMessage" message="tns:ResponseFileMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadMStream">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/UploadMStream" name="RequestFileUpload" message="tns:RequestFileUpload" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStrumien/UploadMStreamResponse" name="ResponseFileUpload" message="tns:ResponseFileUpload" />
     </wsdl:operation>
     <wsdl:operation name="UploadStream">
       <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/UploadStream" message="tns:IStrumien_UploadStream_InputMessage" />
@@ -358,6 +422,19 @@
         <wsp:PolicyReference URI="#WSDualHttpBinding_IStrumien_getMStream_output_policy" />
         <soap12:header message="tns:ResponseFileMessage_Headers" part="nazwa2" use="literal" />
         <soap12:header message="tns:ResponseFileMessage_Headers" part="rozmiar" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMStream">
+      <soap12:operation soapAction="http://tempuri.org/IStrumien/UploadMStream" style="document" />
+      <wsdl:input name="RequestFileUpload">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IStrumien_UploadMStream_Input_policy" />
+        <soap12:header message="tns:RequestFileUpload_Headers" part="nazwa" use="literal" />
+        <soap12:header message="tns:RequestFileUpload_Headers" part="opis" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ResponseFileUpload">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IStrumien_UploadMStream_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

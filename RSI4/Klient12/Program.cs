@@ -1,5 +1,5 @@
 ﻿using Contract12;
-using Klient12.ServiceReference2;
+//using Klient12.ServiceReference2;
 using Klient12.ServiceReference1;
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace Klient12
             client2.UploadStream(send);
             Thread.Sleep(3000);
             Wyswietl(client2.Lista());
-            
+            client2.UploadMStream("image.jpg", "obrazek", WyslijMPlik(".\\image.jpg","obrazek"));
 
             client2.Close();
             Console.WriteLine();
@@ -104,29 +104,29 @@ namespace Klient12
             return myFile;
         }
 
-        static public RequestFileUpload WyslijMPlik(String nazwa, String opis) {
-            ResponseFileUpload wynik = new ResponseFileUpload();
+        static public Stream WyslijMPlik(String nazwa, String opis) {
+            ServiceReference1.RequestFileUpload wynik = new ServiceReference1.RequestFileUpload();
             wynik.nazwa = nazwa;
 
             FileStream myFile;
             Console.WriteLine("-->wywolano getStream");
 
-            wynik.nazwa2 = ".\\image.jpg";
+            //wynik.nazwa2 = ".\\image.jpg";
 
             try
             {
-                myFile = File.OpenRead(wynik.nazwa2);
+                myFile = File.OpenRead(wynik.nazwa);
             }
             catch (IOException ex)
             {
-                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", wynik.nazwa2));
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", wynik.opis));
                 Console.WriteLine(ex.ToString());
                 throw ex;
             }
 
-            wynik.rozmiar = myFile.Length;
-            wynik.dane = myFile;
-            return wynik;
+            //wynik.rozmiar = myFile.Length;
+            //wynik.dane = myFile;
+            return myFile;
         }
 
         static public void Wyswietl(List<DaneObrazkow> lista) {

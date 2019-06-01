@@ -48,7 +48,7 @@ public interface IStrumien
         [MessageHeader]
         public string nazwa;
         [MessageHeader]
-        public string nazwa2;
+        public string opis;
         [MessageBodyMember]
         public Stream dane;
     }
@@ -56,7 +56,7 @@ public interface IStrumien
 
     [MessageContract]
     public class ResponseFileUpload {
-
+        public string msg;
     }
 
 

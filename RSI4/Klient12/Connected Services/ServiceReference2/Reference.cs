@@ -22,6 +22,13 @@ namespace Klient12.ServiceReference2 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
         System.Threading.Tasks.Task<Klient12.ServiceReference2.ResponseFileMessage> getMStreamAsync(Klient12.ServiceReference2.RequestFileMessage request);
         
+        // CODEGEN: Generating message contract since the wrapper name (RequestFileUpload) of message RequestFileUpload does not match the default value (UploadMStream)
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadMStream", ReplyAction="http://tempuri.org/IStrumien/UploadMStreamResponse")]
+        Klient12.ServiceReference2.ResponseFileUpload UploadMStream(Klient12.ServiceReference2.RequestFileUpload request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadMStream", ReplyAction="http://tempuri.org/IStrumien/UploadMStreamResponse")]
+        System.Threading.Tasks.Task<Klient12.ServiceReference2.ResponseFileUpload> UploadMStreamAsync(Klient12.ServiceReference2.RequestFileUpload request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
         bool UploadStream(System.IO.Stream file);
         
@@ -83,6 +90,41 @@ namespace Klient12.ServiceReference2 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RequestFileUpload", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RequestFileUpload {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string nazwa;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string opis;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.IO.Stream dane;
+        
+        public RequestFileUpload() {
+        }
+        
+        public RequestFileUpload(string nazwa, string opis, System.IO.Stream dane) {
+            this.nazwa = nazwa;
+            this.opis = opis;
+            this.dane = dane;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ResponseFileUpload", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ResponseFileUpload {
+        
+        public ResponseFileUpload() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IStrumienChannel : Klient12.ServiceReference2.IStrumien, System.ServiceModel.IClientChannel {
     }
@@ -133,6 +175,32 @@ namespace Klient12.ServiceReference2 {
             Klient12.ServiceReference2.RequestFileMessage inValue = new Klient12.ServiceReference2.RequestFileMessage();
             inValue.nazwa1 = nazwa1;
             return ((Klient12.ServiceReference2.IStrumien)(this)).getMStreamAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Klient12.ServiceReference2.ResponseFileUpload Klient12.ServiceReference2.IStrumien.UploadMStream(Klient12.ServiceReference2.RequestFileUpload request) {
+            return base.Channel.UploadMStream(request);
+        }
+        
+        public void UploadMStream(string nazwa, string opis, System.IO.Stream dane) {
+            Klient12.ServiceReference2.RequestFileUpload inValue = new Klient12.ServiceReference2.RequestFileUpload();
+            inValue.nazwa = nazwa;
+            inValue.opis = opis;
+            inValue.dane = dane;
+            Klient12.ServiceReference2.ResponseFileUpload retVal = ((Klient12.ServiceReference2.IStrumien)(this)).UploadMStream(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Klient12.ServiceReference2.ResponseFileUpload> Klient12.ServiceReference2.IStrumien.UploadMStreamAsync(Klient12.ServiceReference2.RequestFileUpload request) {
+            return base.Channel.UploadMStreamAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Klient12.ServiceReference2.ResponseFileUpload> UploadMStreamAsync(string nazwa, string opis, System.IO.Stream dane) {
+            Klient12.ServiceReference2.RequestFileUpload inValue = new Klient12.ServiceReference2.RequestFileUpload();
+            inValue.nazwa = nazwa;
+            inValue.opis = opis;
+            inValue.dane = dane;
+            return ((Klient12.ServiceReference2.IStrumien)(this)).UploadMStreamAsync(inValue);
         }
         
         public bool UploadStream(System.IO.Stream file) {

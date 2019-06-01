@@ -18,10 +18,24 @@
   </xs:element>
   <xs:element name="nazwa2" nillable="true" type="xs:string" />
   <xs:element name="rozmiar" type="xs:long" />
+  <xs:element name="RequestFileUpload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/Message" name="dane" type="q2:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nazwa" nillable="true" type="xs:string" />
+  <xs:element name="opis" nillable="true" type="xs:string" />
+  <xs:element name="ResponseFileUpload">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="UploadStream">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/Message" name="file" type="q2:StreamBody" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/Message" name="file" type="q3:StreamBody" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +56,7 @@
   <xs:element name="getStreamResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/Message" name="getStreamResult" type="q3:StreamBody" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/Message" name="getStreamResult" type="q4:StreamBody" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -54,7 +68,7 @@
   <xs:element name="ListaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Contract12" minOccurs="0" name="ListaResult" nillable="true" type="q4:ArrayOfDaneObrazkow" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Contract12" minOccurs="0" name="ListaResult" nillable="true" type="q5:ArrayOfDaneObrazkow" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

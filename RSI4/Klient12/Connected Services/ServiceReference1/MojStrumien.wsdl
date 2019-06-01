@@ -18,6 +18,16 @@
     <wsdl:part name="nazwa2" element="tns:nazwa2" />
     <wsdl:part name="rozmiar" element="tns:rozmiar" />
   </wsdl:message>
+  <wsdl:message name="RequestFileUpload">
+    <wsdl:part name="parameters" element="tns:RequestFileUpload" />
+  </wsdl:message>
+  <wsdl:message name="RequestFileUpload_Headers">
+    <wsdl:part name="nazwa" element="tns:nazwa" />
+    <wsdl:part name="opis" element="tns:opis" />
+  </wsdl:message>
+  <wsdl:message name="ResponseFileUpload">
+    <wsdl:part name="parameters" element="tns:ResponseFileUpload" />
+  </wsdl:message>
   <wsdl:message name="IStrumien_UploadStream_InputMessage">
     <wsdl:part name="parameters" element="tns:UploadStream" />
   </wsdl:message>
@@ -40,6 +50,10 @@
     <wsdl:operation name="getMStream">
       <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/getMStream" name="RequestFileMessage" message="tns:RequestFileMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStrumien/getMStreamResponse" name="ResponseFileMessage" message="tns:ResponseFileMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadMStream">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/UploadMStream" name="RequestFileUpload" message="tns:RequestFileUpload" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStrumien/UploadMStreamResponse" name="ResponseFileUpload" message="tns:ResponseFileUpload" />
     </wsdl:operation>
     <wsdl:operation name="UploadStream">
       <wsdl:input wsaw:Action="http://tempuri.org/IStrumien/UploadStream" message="tns:IStrumien_UploadStream_InputMessage" />
@@ -64,6 +78,17 @@
       <wsdl:output name="ResponseFileMessage">
         <soap:header message="tns:ResponseFileMessage_Headers" part="nazwa2" use="literal" />
         <soap:header message="tns:ResponseFileMessage_Headers" part="rozmiar" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMStream">
+      <soap:operation soapAction="http://tempuri.org/IStrumien/UploadMStream" style="document" />
+      <wsdl:input name="RequestFileUpload">
+        <soap:header message="tns:RequestFileUpload_Headers" part="nazwa" use="literal" />
+        <soap:header message="tns:RequestFileUpload_Headers" part="opis" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ResponseFileUpload">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
