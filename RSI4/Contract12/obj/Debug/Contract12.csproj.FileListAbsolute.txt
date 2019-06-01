@@ -4,7 +4,7 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\bin\Debug\Contract12.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\bin\Debug\Contract12.pdb
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\obj\Debug\Contract12.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\obj\Debug\Contract12.pdb
-C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\obj\Debug\Contract12.csprojAssemblyReference.cache
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\bin\Debug\Newtonsoft.Json.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\bin\Debug\Newtonsoft.Json.xml
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\obj\Debug\Contract12.csproj.CopyComplete
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Contract12\obj\Debug\Contract12.csprojAssemblyReference.cache

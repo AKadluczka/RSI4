@@ -61,12 +61,12 @@ namespace Contract12
 
     public class MojStrumien : IStrumien
     {
-        static public List<DaneObrazkow> baza = CheckFile();
-       
+          
+        
 
         
         
-        public void SaveFile() {
+        public static void SaveFile(List<DaneObrazkow> baza) {
             using (StreamWriter file = File.CreateText(@"C:\path.txt"))
             {
                 JsonSerializer serializer = new JsonSerializer();
@@ -78,19 +78,26 @@ namespace Contract12
 
 
         public static List<DaneObrazkow> CheckFile() {
+
             string json = File.ReadAllText(@"C:\path.txt");
-            baza = JsonConvert.DeserializeObject<List<DaneObrazkow>>(json);
+            List<DaneObrazkow> baza = JsonConvert.DeserializeObject<List<DaneObrazkow>>(json);
+            if (baza == null)
+                baza = new List<DaneObrazkow>();
 
-            var firstElement = baza.First();
-
-            Console.Write(firstElement.nazwa);
-            Console.Write(firstElement.opis);
+            if (baza.Count() > 0) { 
+                var firstElement = baza.First();
+                Console.Write(firstElement.nazwa);
+                Console.Write(firstElement.opis);
+            }
             return baza;
         }
 
 
         public System.IO.Stream getStream(String data)
         {
+            //List<DaneObrazkow> baza = CheckFile();         
+        
+            //SaveFile(baza);
             FileStream myFile;
             Console.WriteLine("-->wywolano getStream");
             string filePath = Path.Combine(System.Environment.CurrentDirectory, ".\\image.jpg");
@@ -134,9 +141,18 @@ namespace Contract12
             return wynik;
         }
 
+        public ResponseFileUpload UploadMStream(RequestFileUpload request)
+        {
+            List<DaneObrazkow> baza = CheckFile();
+            ResponseFileUpload wynik = new ResponseFileUpload();
+
+
+            return wynik;
+        }
+
         public bool UploadStream(Stream file)
         {
-            
+            List<DaneObrazkow> baza = CheckFile();
             String filePath = Path.Combine(System.Environment.CurrentDirectory,"nowyplik.jpg");
             DaneObrazkow obiekt = new DaneObrazkow();
             obiekt.nazwa = "nazwa";
@@ -147,13 +163,15 @@ namespace Contract12
             Console.WriteLine("Wywoałanie uploadu()");
             System.IO.Stream stream2 = file;
             ZapiszPlik(stream2, filePath);
-            SaveFile();
+            SaveFile(baza);
 
         
             Console.WriteLine("koniec uploadu");
 
             return true;
         }
+
+        
 
 
         static void ZapiszPlik(System.IO.Stream instream, string filePath)
@@ -183,7 +201,7 @@ namespace Contract12
 
         public List<DaneObrazkow> Lista()
         {
-            return baza;
+            return CheckFile();
         }
     }
     public struct DaneObrazkow

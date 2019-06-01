@@ -18,19 +18,23 @@ namespace Klient12
             //ServiceReference2.StrumienClient client1 = new ServiceReference2.StrumienClient("WSDualHttpBinding_IStrumien");
             ServiceReference1.StrumienClient client2 = new ServiceReference1.StrumienClient();
             String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
-
+            
             Console.WriteLine("Wywoałanie getStream()");
-            System.IO.Stream stream2 = client2.getStream("image.jpg");
-            ZapiszPlik(stream2, filePath);
-
+            
+                System.IO.Stream stream2 = client2.getStream("image.jpg");
+                ZapiszPlik(stream2, filePath);
+           
+           
             Console.WriteLine("wywoluje getMStream");
             Stream fs = null;
             long rozmiar;
             string nnn = "image.jpg";
+           
             nnn = client2.getMStream(nnn, out rozmiar, out fs);
             filePath = Path.Combine(System.Environment.CurrentDirectory, nnn);
 
             ZapiszPlik(fs, filePath);
+           
             Console.WriteLine("koniec getMStream");
 
             Stream send = WyslijPlik();
@@ -98,6 +102,31 @@ namespace Klient12
                 throw ex;
             }
             return myFile;
+        }
+
+        static public RequestFileUpload WyslijMPlik(String nazwa, String opis) {
+            ResponseFileUpload wynik = new ResponseFileUpload();
+            wynik.nazwa = nazwa;
+
+            FileStream myFile;
+            Console.WriteLine("-->wywolano getStream");
+
+            wynik.nazwa2 = ".\\image.jpg";
+
+            try
+            {
+                myFile = File.OpenRead(wynik.nazwa2);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", wynik.nazwa2));
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+
+            wynik.rozmiar = myFile.Length;
+            wynik.dane = myFile;
+            return wynik;
         }
 
         static public void Wyswietl(List<DaneObrazkow> lista) {

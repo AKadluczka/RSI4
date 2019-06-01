@@ -4,3 +4,4 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\bin\Debug\KlientProxy.ex
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\bin\Debug\KlientProxy.pdb
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\obj\Debug\KlientProxy.exe
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\obj\Debug\KlientProxy.pdb
+C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\KlientProxy\obj\Debug\KlientProxy.csprojAssemblyReference.cache

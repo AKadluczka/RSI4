@@ -101,10 +101,6 @@
     <None Include="Properties\DataSources\CallbackContrakt.CompositeType.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CallbackContrakt\CallbackContrakt.csproj">
-      <Project>{728d8357-4ee4-4b0b-a17c-f949cf07e675}</Project>
-      <Name>CallbackContrakt</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KlientProxy\KlientProxy.csproj">
       <Project>{5a74a0fd-4b81-4af7-b770-0e0085ab517d}</Project>
       <Name>KlientProxy</Name>

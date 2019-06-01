@@ -16,6 +16,9 @@ public interface IStrumien
         ResponseFileMessage getMStream(RequestFileMessage request);
 
         [OperationContract]
+        ResponseFileUpload UploadMStream(RequestFileUpload request);
+
+        [OperationContract]
         bool UploadStream(Stream file);
 
         [OperationContract]
@@ -40,13 +43,29 @@ public interface IStrumien
 
     }
 
+    [MessageContract]
+    public class RequestFileUpload {
+        [MessageHeader]
+        public string nazwa;
+        [MessageHeader]
+        public string nazwa2;
+        [MessageBodyMember]
+        public Stream dane;
+    }
+
+
+    [MessageContract]
+    public class ResponseFileUpload {
+
+    }
+
 
 
 
     [MessageContract]
     public class RequestFileMessage {
         [MessageBodyMember]
-        public string nazwa1;
+        public string nazwa1;      
     }
 
     [MessageContract]
