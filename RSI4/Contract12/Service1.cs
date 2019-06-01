@@ -86,8 +86,8 @@ namespace Contract12
 
             if (baza.Count() > 0) { 
                 var firstElement = baza.First();
-                Console.Write(firstElement.nazwa);
-                Console.Write(firstElement.opis);
+                //Console.Write(firstElement.nazwa);
+                //Console.Write(firstElement.opis);
             }
             return baza;
         }
@@ -146,7 +146,7 @@ namespace Contract12
             Console.WriteLine("Wywołano mstreamupload");
             List<DaneObrazkow> baza = CheckFile();
             ResponseFileUpload wynik = new ResponseFileUpload();
-            Stream myFile = request.dane;
+            System.IO.Stream myFile =request.dane;
             String filePath = Path.Combine(System.Environment.CurrentDirectory, request.nazwa);
             ZapiszPlik(myFile, filePath);
             DaneObrazkow obiekt = new DaneObrazkow();
@@ -192,19 +192,24 @@ namespace Contract12
 
             byte[] buffer = new byte[bufferLength];
             Console.WriteLine("--->Zapisuje plik {0}", filePath);
-            FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write);
-
-            while ((counter = instream.Read(buffer, 0, bufferLength)) > 0)
+            try
             {
-                outstream.Write(buffer, 0, counter);
-                Console.Write(".{0}", counter);
-                bytecount += counter;
-            }
-            Console.WriteLine();
-            Console.WriteLine("Zapisano {0} bajtów", bytecount);
+                FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write);
 
-            outstream.Close();
-            instream.Close();
+                while ((counter = instream.Read(buffer, 0, bufferLength)) > 0)
+                {
+                    outstream.Write(buffer, 0, counter);
+                    Console.Write(".{0}", counter);
+                    bytecount += counter;
+                }
+                Console.WriteLine();
+                Console.WriteLine("Zapisano {0} bajtów", bytecount);
+
+                outstream.Close();
+                instream.Close();
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            
             Console.WriteLine();
             Console.WriteLine("-->Plik {0} zapisany", filePath);
         }

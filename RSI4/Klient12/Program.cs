@@ -41,7 +41,7 @@ namespace Klient12
             client2.UploadStream(send);
             Thread.Sleep(3000);
             Wyswietl(client2.Lista());
-            client2.UploadMStream("image.jpg", "obrazek", WyslijMPlik(".\\image.jpg","obrazek"));
+            client2.UploadMStream("image2.jpg", "obrazek", WyslijMPlik(".\\image2.jpg","obrazek"));
 
             client2.Close();
             Console.WriteLine();
