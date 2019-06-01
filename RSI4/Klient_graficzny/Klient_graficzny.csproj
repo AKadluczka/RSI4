@@ -166,5 +166,15 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contract12\Contract12.csproj">
+      <Project>{2e7239b9-1060-4544-908f-af05166ef1ac}</Project>
+      <Name>Contract12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Host12\Host12.csproj">
+      <Project>{39a24e65-a04e-46f5-bad2-379311d7238f}</Project>
+      <Name>Host12</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

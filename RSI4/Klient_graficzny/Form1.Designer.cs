@@ -46,38 +46,40 @@ namespace Klient_graficzny
         /// 
         #endregion
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
 
-        
+
+
 
         private void InitializeComponent()
         {
-           
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(55, 342);
+            this.button1.Location = new System.Drawing.Point(54, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 52);
             this.button1.TabIndex = 1;
             this.button1.Text = "pobierz listę obrazków";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // progressBar1
             // 
@@ -86,14 +88,6 @@ namespace Klient_graficzny
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(265, 24);
             this.progressBar1.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(339, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 223);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -112,23 +106,44 @@ namespace Klient_graficzny
             this.textBox2.Text = "lista obrazów";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // checkedListBox1
+            // button2
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(28, 39);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(186, 293);
-            this.checkedListBox1.TabIndex = 6;
+            this.button2.Location = new System.Drawing.Point(385, 348);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "próbna";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(28, 44);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(186, 276);
+            this.listBox1.TabIndex = 9;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(339, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 213);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
@@ -142,26 +157,16 @@ namespace Klient_graficzny
         
 
 
-        public static int interwal = 0;
-
-        private void timer1_Tick(object sander, EventArgs e)
-        {
-            interwal += 1;
-            progressBar1.Increment(interwal);
-        }
+        
 
 
-        private void button1_Click(object sander, EventArgs e)
-        {
-            Download(client2);
-            Download2(client2);
-        }
+        
 
         private void checkedListBox1_Click(object sander, EventArgs e)
         {
             timer1.Start();
             /* trzeba wyswietlic odpowiednie zdj*/
-            Object obj = checkedListBox1.CheckedItems[0];
+            
             string path = Path.Combine(System.Environment.CurrentDirectory, "image.jpg");
             string text = "tekst z nacisnietego zdj";
            
@@ -225,6 +230,8 @@ namespace Klient_graficzny
             }
         }
 
+        private ListBox listBox1;
+
         static void ZapiszPlik(System.IO.Stream instream, string filePath)
         {
             const int bufferLength = 8192;
@@ -259,6 +266,7 @@ namespace Klient_graficzny
             try
             {
                 myFile = File.OpenRead(filePath);
+               // Console.WriteLine(String.Format("poszło"));
             }
             catch (IOException ex)
             {
@@ -277,6 +285,8 @@ namespace Klient_graficzny
             }
 
         }
+
+        
 
 
     }
