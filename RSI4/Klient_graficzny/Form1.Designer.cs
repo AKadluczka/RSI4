@@ -50,7 +50,6 @@ namespace Klient_graficzny
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
 
@@ -64,7 +63,6 @@ namespace Klient_graficzny
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -72,15 +70,19 @@ namespace Klient_graficzny
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(53, 334);
+            this.button1.Location = new System.Drawing.Point(28, 334);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 52);
+            this.button1.Size = new System.Drawing.Size(185, 22);
             this.button1.TabIndex = 1;
             this.button1.Text = "pobierz listę obrazków";
             this.button1.UseVisualStyleBackColor = true;
@@ -88,7 +90,7 @@ namespace Klient_graficzny
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(339, 22);
+            this.progressBar1.Location = new System.Drawing.Point(339, 11);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.Maximum = 1000;
             this.progressBar1.Name = "progressBar1";
@@ -97,26 +99,15 @@ namespace Klient_graficzny
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(339, 334);
+            this.textBox1.Location = new System.Drawing.Point(339, 306);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(265, 22);
             this.textBox1.TabIndex = 4;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(28, 10);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(185, 22);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "lista obrazów";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(374, 295);
+            this.button2.Location = new System.Drawing.Point(383, 276);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(167, 23);
@@ -129,16 +120,16 @@ namespace Klient_graficzny
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(28, 44);
+            this.listBox1.Location = new System.Drawing.Point(28, 36);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(185, 276);
+            this.listBox1.Size = new System.Drawing.Size(185, 292);
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(339, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(339, 40);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 232);
@@ -167,25 +158,66 @@ namespace Klient_graficzny
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(421, 363);
+            this.button5.Location = new System.Drawing.Point(339, 347);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(134, 23);
             this.button5.TabIndex = 14;
             this.button5.Text = "upload";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(78, 392);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "opis";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(469, 347);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(135, 23);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "download";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(78, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "lista plików";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 372);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 435);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
@@ -230,17 +262,16 @@ namespace Klient_graficzny
 
             }
         }
-        private static void Download2(ServiceReference1.StrumienClient client2)
+        private static void Download2(ServiceReference1.StrumienClient client2, String nazwa)
         {
 
-            String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
+            String filePath = Path.Combine(System.Environment.CurrentDirectory, nazwa);
             Console.WriteLine("wywoluje getMStream");
             Stream fs = null;
             long rozmiar;
-            string nnn = "image.jpg";
+            string nnn = nazwa;
             nnn = client2.getMStream(nnn, out rozmiar, out fs);
             filePath = Path.Combine(System.Environment.CurrentDirectory, nnn);
-
             ZapiszPlik(fs, filePath);
 
         }
@@ -334,9 +365,41 @@ namespace Klient_graficzny
 
         }
 
-        
+        private static void Upload2(ServiceReference1.StrumienClient client2, String nazwa, String opis)
+        {
+            client2.UploadMStream(nazwa, opis, WyslijMPlik(".\\" + nazwa, opis));
 
+        }
 
+        static public Stream WyslijMPlik(String nazwa, String opis)
+        {
+            ServiceReference1.RequestFileUpload wynik = new ServiceReference1.RequestFileUpload();
+            wynik.nazwa = nazwa;
+
+            FileStream myFile;
+            Console.WriteLine("-->wywolano getStream");
+
+            //wynik.nazwa2 = ".\\image.jpg";
+
+            try
+            {
+                myFile = File.OpenRead(wynik.nazwa);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", wynik.opis));
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+
+            //wynik.rozmiar = myFile.Length;
+            //wynik.dane = myFile;
+            return myFile;
+        }
+        private Button button6;
+        private Button button7;
+        private Label label1;
+        private Label label2;
     }
 }
 

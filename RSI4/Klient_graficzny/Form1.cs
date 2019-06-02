@@ -50,7 +50,7 @@ namespace Klient_graficzny
 
         private void button1_Click(object sander, EventArgs e)
         {
-            Download2(client2);
+            
              DaneObrazkow[] list = client2.Lista();
             /*
              DaneObrazkow do1 = new DaneObrazkow();
@@ -94,6 +94,7 @@ namespace Klient_graficzny
                     {
                         RadioButton rbn = new RadioButton();
                         rbn.Text = list[i].nazwa;
+                       
                         rbn.Location = new System.Drawing.Point(rb.Location.X, rb.Location.Y + (i*rb.Height));
                         listBox1.Controls.Add(rbn);
                     }
@@ -106,21 +107,22 @@ namespace Klient_graficzny
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try {
+                var checkedButton = listBox1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
-            int index = listBox1.SelectedIndex;
-            DaneObrazkow[] list = client2.Lista();
+                String name = checkedButton.Text;
 
-            String name = list[index].nazwa;
+                String filePath = Path.Combine(System.Environment.CurrentDirectory, name);
 
-            //String nazwa = "klient.jpg";
+                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
-            String filePath = Path.Combine(System.Environment.CurrentDirectory,name);
+                pictureBox1.Image = Image.FromFile(filePath);
+            } catch(Exception ee) {
+                textBox1.Text = "brak zdjecia";
+            }
             
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
-            pictureBox1.Image = Image.FromFile(filePath);
-
-
+    
             
         }
 
@@ -153,7 +155,40 @@ namespace Klient_graficzny
         private void button5_Click(object sender, EventArgs e)
         {
             String name = textBox1.Text;
-            Upload(client2, name);
+            Upload2(client2, name, "opiaaaaaas");
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var checkedButton = listBox1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+           
+            String nazwa = checkedButton.Text;
+            String opis = "";
+            DaneObrazkow[] list = client2.Lista();
+            for(int i =0; i<list.Length; i++)
+            {
+                if (nazwa == list[i].nazwa) opis = list[i].opis;
+            }
+
+
+            label2.Text = opis;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            String name = textBox1.Text;
+            Download2(client2, name);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
