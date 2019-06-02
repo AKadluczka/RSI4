@@ -166,7 +166,7 @@ namespace Klient_graficzny
         private void button5_Click(object sender, EventArgs e)
         {
             String name = textBox1.Text;
-            Upload2(client2, name, "opiaaaaaas");
+            Upload2(client2, name, textBox2.Text);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -222,6 +222,11 @@ namespace Klient_graficzny
 
         public static void ustawLabel() {
             label3.Text = "przekonwertowano";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

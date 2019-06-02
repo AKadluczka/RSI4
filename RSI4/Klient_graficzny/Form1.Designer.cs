@@ -76,12 +76,16 @@ namespace Klient_graficzny
             this.label2 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 272);
+            this.button1.Location = new System.Drawing.Point(21, 271);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 29);
@@ -162,7 +166,7 @@ namespace Klient_graficzny
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(254, 282);
+            this.button5.Location = new System.Drawing.Point(312, 305);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 30);
@@ -206,7 +210,7 @@ namespace Klient_graficzny
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 302);
+            this.label2.Location = new System.Drawing.Point(173, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
@@ -228,16 +232,53 @@ namespace Klient_graficzny
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(498, 165);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(35, 13);
+            label3.Size = new System.Drawing.Size(0, 13);
             label3.TabIndex = 21;
-            label3.Text = "label3";
             label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(254, 284);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(200, 20);
+            this.textBox2.TabIndex = 22;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(202, 261);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Nazwa";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(202, 291);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Opis";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 333);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.TabIndex = 25;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 353);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(label3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label2);
@@ -432,6 +473,10 @@ namespace Klient_graficzny
         private Label label1;
         private Label label2;
         private Button button8;
+        private TextBox textBox2;
+        private Label label4;
+        private Label label5;
+        private Label label6;
         private static Label label3;
     }
 }
