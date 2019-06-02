@@ -41,16 +41,15 @@ namespace Klient_graficzny
             //Console.WriteLine("naciśniej enter aby zakończyć");
             //Console.ReadLine();
         }
-        private static void Download2(ServiceReference1.StrumienClient client2) {
+        private static void Download2(ServiceReference1.StrumienClient client2,String nazwa) {
 
-            String filePath = Path.Combine(System.Environment.CurrentDirectory, "klient.jpg");
+            String filePath = Path.Combine(System.Environment.CurrentDirectory, nazwa);
             Console.WriteLine("wywoluje getMStream");
             Stream fs = null;
             long rozmiar;
-            string nnn = "image.jpg";
+            string nnn = nazwa;
             nnn = client2.getMStream(nnn, out rozmiar, out fs);
             filePath = Path.Combine(System.Environment.CurrentDirectory, nnn);
-
             ZapiszPlik(fs, filePath);
             
         }
