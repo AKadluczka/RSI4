@@ -345,6 +345,8 @@ namespace Klient_graficzny
             nnn = client2.getMStream(nnn, out rozmiar, out fs);
             filePath = Path.Combine(System.Environment.CurrentDirectory, nnn);
             ZapiszPlik(fs, filePath);
+            
+
 
         }
 
@@ -364,6 +366,7 @@ namespace Klient_graficzny
         {
             Stream send = WyslijPlik(nazwa);
             client2.UploadStream(send);
+            
         }
 
 
@@ -391,7 +394,7 @@ namespace Klient_graficzny
 
             byte[] buffer = new byte[bufferLength];
             Console.WriteLine("--->Zapisuje plik {0}", filePath);
-            FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write);
+            FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
 
             while ((counter = instream.Read(buffer, 0, bufferLength)) > 0)
             {
@@ -439,7 +442,9 @@ namespace Klient_graficzny
 
         private static void Upload2(ServiceReference1.StrumienClient client2, String nazwa, String opis)
         {
+
             client2.UploadMStream(nazwa, opis, WyslijMPlik(".\\" + nazwa, opis));
+
 
         }
 

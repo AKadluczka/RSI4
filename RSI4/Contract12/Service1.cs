@@ -134,15 +134,23 @@ namespace Contract12
             }
 
             wynik.rozmiar = myFile.Length;
-            wynik.dane = myFile;
+            wynik.dane = myFile;            
+            
             return wynik;
         }
 
         public ResponseFileUpload UploadMStream(RequestFileUpload request)
         {
             Console.WriteLine("Wywołano mstreamupload");
-            List<DaneObrazkow> baza = CheckFile();
             ResponseFileUpload wynik = new ResponseFileUpload();
+            Boolean duplicates = false;
+            List<DaneObrazkow> baza = CheckFile();
+            foreach (DaneObrazkow db in baza) {
+                if (db.nazwa.Equals(request.nazwa))
+                    duplicates = true;
+               
+            }
+            if (duplicates == false) {              
             System.IO.Stream myFile = request.dane;
             String filePath = Path.Combine(System.Environment.CurrentDirectory, request.nazwa);
             ZapiszPlik(myFile, filePath);
@@ -151,8 +159,11 @@ namespace Contract12
             obiekt.opis = request.opis;
             baza.Add(obiekt);
             SaveFile(baza);
+            }
+
             wynik.msg = "Zakonczono";
             Console.WriteLine("Zakonczono mstreamupload");
+            
 
             return wynik;
         }
@@ -191,7 +202,7 @@ namespace Contract12
             Console.WriteLine("--->Zapisuje plik {0}", filePath);
             try
             {
-                FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write);
+                FileStream outstream = File.Open(filePath, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
 
                 while ((counter = instream.Read(buffer, 0, bufferLength)) > 0)
                 {

@@ -127,7 +127,12 @@ namespace Klient_graficzny
 
                 pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
-                pictureBox1.Image = Image.FromFile(filePath);
+                FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                pictureBox1.Image = Image.FromStream(stream);
+                stream.Close();
+
+                //pictureBox1.Image = Image.FromFile(filePath);
+                //Image.FromFile(filePath).Dispose();
             } catch(Exception ee) {
                 textBox1.Text = "brak zdjecia";
             }
@@ -165,8 +170,13 @@ namespace Klient_graficzny
 
         private void button5_Click(object sender, EventArgs e)
         {
+            int temp = client2.Lista().Length;
             String name = textBox1.Text;
             Upload2(client2, name, textBox2.Text);
+            if (temp == client2.Lista().Length)
+                label6.Text = "Upload nieudany, plik juz istnieje";
+            else
+                label6.Text = "Zuploadowano " + textBox2.Text;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -193,8 +203,10 @@ namespace Klient_graficzny
 
         private void button7_Click(object sender, EventArgs e)
         {
+            
             var checkedButton = listBox1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             Download2(client2, checkedButton.Text);
+            label6.Text = "Pobrano " + checkedButton.Text;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -209,6 +221,7 @@ namespace Klient_graficzny
 
         private void button8_Click(object sender, EventArgs e)
         {
+
             label3.Text = "Trwa konwersja prosze czekac";
             callbackLista.ZwrocListe();
             
