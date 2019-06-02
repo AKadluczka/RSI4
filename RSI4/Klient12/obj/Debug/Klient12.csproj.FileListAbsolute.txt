@@ -11,3 +11,16 @@ C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient12\bin\Debug\Contract12.pdb
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient12\bin\Debug\Contract12.dll.config
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient12\bin\Debug\Newtonsoft.Json.dll
 C:\Users\DominikBabinski\Desktop\RSI_4\RSI4\Klient12\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Klient12.exe.config
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Klient12.exe
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Klient12.pdb
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Contract12.dll
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Contract12.pdb
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Contract12.dll.config
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\obj\Debug\Klient12.csprojAssemblyReference.cache
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\obj\Debug\Klient12.csproj.CoreCompileInputs.cache
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\obj\Debug\Klient12.csproj.CopyComplete
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\obj\Debug\Klient12.exe
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient12\obj\Debug\Klient12.pdb

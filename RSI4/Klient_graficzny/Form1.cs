@@ -50,8 +50,8 @@ namespace Klient_graficzny
 
         private void button1_Click(object sander, EventArgs e)
         {
-            // DaneObrazkow[] list = client2.Lista();
-
+             DaneObrazkow[] list = client2.Lista();
+            /*
              DaneObrazkow do1 = new DaneObrazkow();
              do1.nazwa = "nazwa1";
              do1.opis = "opis";
@@ -73,29 +73,12 @@ namespace Klient_graficzny
             do5.opis = "opis";
 
             DaneObrazkow[] list = new DaneObrazkow[] { do1, do2, do3, do4, do5 };
-
+            */
 
              if (list.Length != 0)
              {
 
-
-                //RadioButton rb;
-                /*= new RadioButton();
-        rb.Text = "nazwa1";
-        rb.Location = new System.Drawing.Point(17, 22);
-        listBox1.Controls.Add(rb);
-
-        RadioButton rb3 = new RadioButton();
-        rb3.Text = "nazwa3";
-        rb3.Location = new System.Drawing.Point(rb.Location.X, rb.Location.Y + rb.Height);
-        listBox1.Controls.Add(rb3);
-
-        RadioButton rb2 = new RadioButton();
-        rb2.Text = "nazwa2";
-        rb2.Location = new System.Drawing.Point(rb.Location.X, rb3.Location.Y + rb.Height);
-        listBox1.Controls.Add(rb2);*/
-
-
+                
                 RadioButton rb = new RadioButton();
                 rb.Location = new System.Drawing.Point(10, 10);
 
@@ -115,18 +98,14 @@ namespace Klient_graficzny
                     }
 
                 }
-            // addRadioButton(groupBox1, rbList);
+            
 
         } 
-        }/*
-        public void addRadioButton(GroupBox gb,  Control[] rb)
-        {
-            gb.Controls.AddRange(rb);
-        }*/
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            
             // String nazwa = listBox1.Text;
             String nazwa = "klient.jpg";
 
@@ -137,7 +116,7 @@ namespace Klient_graficzny
             pictureBox1.Image = Image.FromFile(filePath);
 
 
-            timer1.Stop();
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,9 +124,25 @@ namespace Klient_graficzny
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
+            progressBar1.Value = 0;
+        }
 
+        private void pictureBox1_LoadProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }
