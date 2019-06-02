@@ -61,11 +61,6 @@ namespace Contract12
 
     public class MojStrumien : IStrumien
     {
-          
-        
-
-        
-        
         public static void SaveFile(List<DaneObrazkow> baza) {
             using (StreamWriter file = File.CreateText(@"C:\path.txt"))
             {
@@ -73,9 +68,7 @@ namespace Contract12
 
                 serializer.Serialize(file, baza);
             }
-
         }
-
 
         public static List<DaneObrazkow> CheckFile() {
 
@@ -123,7 +116,7 @@ namespace Contract12
             FileStream myFile;
             Console.WriteLine("-->wywolano getStream");
 
-            wynik.nazwa2 = ".\\image.jpg";
+            wynik.nazwa2 = ".\\"+request.nazwa1;
 
             try
             {
@@ -146,7 +139,7 @@ namespace Contract12
             Console.WriteLine("Wywołano mstreamupload");
             List<DaneObrazkow> baza = CheckFile();
             ResponseFileUpload wynik = new ResponseFileUpload();
-            System.IO.Stream myFile =request.dane;
+            System.IO.Stream myFile = request.dane;
             String filePath = Path.Combine(System.Environment.CurrentDirectory, request.nazwa);
             ZapiszPlik(myFile, filePath);
             DaneObrazkow obiekt = new DaneObrazkow();
