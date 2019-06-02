@@ -1,4 +1,5 @@
-﻿using Klient_graficzny.ServiceReference1;
+﻿using Contract12;
+using Klient_graficzny.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -70,6 +71,13 @@ namespace Klient_graficzny
             client2.UploadStream(send);
         }
 
+        private static void Upload2(ServiceReference1.StrumienClient client2, String nazwa,String opis)
+        {
+            client2.UploadMStream(nazwa, opis, WyslijMPlik(".\\"+nazwa,opis));           
+          
+        }
+
+
 
         private static void Wyswietl(DaneObrazkow[] daneObrazkow)
         {
@@ -125,6 +133,33 @@ namespace Klient_graficzny
             }
             return myFile;
         }
+
+        static public Stream WyslijMPlik(String nazwa, String opis)
+        {
+            ServiceReference1.RequestFileUpload wynik = new ServiceReference1.RequestFileUpload();
+            wynik.nazwa = nazwa;
+
+            FileStream myFile;
+            Console.WriteLine("-->wywolano getStream");
+
+            //wynik.nazwa2 = ".\\image.jpg";
+
+            try
+            {
+                myFile = File.OpenRead(wynik.nazwa);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(String.Format("Wyjątek otrwarcia pliku {0}", wynik.opis));
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+
+            //wynik.rozmiar = myFile.Length;
+            //wynik.dane = myFile;
+            return myFile;
+        }
+
 
         static public void Wyswietl(List<DaneObrazkow> lista)
         {

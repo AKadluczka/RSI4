@@ -78,10 +78,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServiceReference1\Klient_graficzny.ServiceReference1.DaneObrazkow.datasource">
+    <None Include="Connected Services\ServiceReference1\Klient_graficzny.ServiceReference1.ResponseFileMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Klient_graficzny.ServiceReference1.ResponseFileMessage.datasource">
+    <None Include="Connected Services\ServiceReference1\Klient_graficzny.ServiceReference1.ResponseFileUpload.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\MojStrumien.wsdl" />
@@ -97,10 +97,10 @@
     <None Include="Connected Services\ServiceReference1\NazwaBazowa3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference2\Klient_graficzny.ServiceReference2.DaneObrazkow.datasource">
+    <None Include="Connected Services\ServiceReference2\Klient_graficzny.ServiceReference2.ResponseFileMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\Klient_graficzny.ServiceReference2.ResponseFileMessage.datasource">
+    <None Include="Connected Services\ServiceReference2\Klient_graficzny.ServiceReference2.ResponseFileUpload.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\MojStrumien.wsdl" />
@@ -116,6 +116,7 @@
     <None Include="Connected Services\ServiceReference2\NazwaBazowa3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Contract12.DaneObrazkow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,5 @@
-﻿using Klient_graficzny.ServiceReference1;
+﻿using Contract12;
+using Klient_graficzny.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Contract12;
 
 namespace Klient_graficzny
 {
@@ -60,6 +61,7 @@ namespace Klient_graficzny
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -73,9 +75,10 @@ namespace Klient_graficzny
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 333);
+            this.button1.Location = new System.Drawing.Point(40, 271);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 52);
+            this.button1.Size = new System.Drawing.Size(90, 42);
             this.button1.TabIndex = 1;
             this.button1.Text = "pobierz listę obrazków";
             this.button1.UseVisualStyleBackColor = true;
@@ -83,34 +86,38 @@ namespace Klient_graficzny
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(339, 22);
+            this.progressBar1.Location = new System.Drawing.Point(254, 18);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar1.Maximum = 1000;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(265, 24);
+            this.progressBar1.Size = new System.Drawing.Size(199, 20);
             this.progressBar1.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(339, 303);
+            this.textBox1.Location = new System.Drawing.Point(254, 246);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 22);
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(28, 10);
+            this.textBox2.Location = new System.Drawing.Point(21, 8);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(186, 22);
+            this.textBox2.Size = new System.Drawing.Size(140, 20);
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "lista obrazów";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(385, 348);
+            this.button2.Location = new System.Drawing.Point(289, 283);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 23);
+            this.button2.Size = new System.Drawing.Size(125, 19);
             this.button2.TabIndex = 7;
             this.button2.Text = "próbna";
             this.button2.UseVisualStyleBackColor = true;
@@ -119,33 +126,36 @@ namespace Klient_graficzny
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(28, 44);
+            this.listBox1.Location = new System.Drawing.Point(21, 36);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(186, 276);
+            this.listBox1.Size = new System.Drawing.Size(140, 225);
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(339, 69);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(254, 42);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 213);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 173);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -9,69 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Klient_graficzny.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DaneObrazkow", Namespace="http://schemas.datacontract.org/2004/07/Contract12")]
-    [System.SerializableAttribute()]
-    public partial struct DaneObrazkow : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazwaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string opisField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nazwa {
-            get {
-                return this.nazwaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazwaField, value) != true)) {
-                    this.nazwaField = value;
-                    this.RaisePropertyChanged("nazwa");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string opis {
-            get {
-                return this.opisField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.opisField, value) != true)) {
-                    this.opisField = value;
-                    this.RaisePropertyChanged("opis");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IStrumien")]
@@ -83,6 +21,13 @@ namespace Klient_graficzny.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
         System.Threading.Tasks.Task<Klient_graficzny.ServiceReference1.ResponseFileMessage> getMStreamAsync(Klient_graficzny.ServiceReference1.RequestFileMessage request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (RequestFileUpload) of message RequestFileUpload does not match the default value (UploadMStream)
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadMStream", ReplyAction="http://tempuri.org/IStrumien/UploadMStreamResponse")]
+        Klient_graficzny.ServiceReference1.ResponseFileUpload UploadMStream(Klient_graficzny.ServiceReference1.RequestFileUpload request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadMStream", ReplyAction="http://tempuri.org/IStrumien/UploadMStreamResponse")]
+        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference1.ResponseFileUpload> UploadMStreamAsync(Klient_graficzny.ServiceReference1.RequestFileUpload request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
         bool UploadStream(System.IO.Stream file);
@@ -97,10 +42,10 @@ namespace Klient_graficzny.ServiceReference1 {
         System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
-        Klient_graficzny.ServiceReference1.DaneObrazkow[] Lista();
+        Contract12.DaneObrazkow[] Lista();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
-        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference1.DaneObrazkow[]> ListaAsync();
+        System.Threading.Tasks.Task<Contract12.DaneObrazkow[]> ListaAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -142,6 +87,41 @@ namespace Klient_graficzny.ServiceReference1 {
             this.nazwa2 = nazwa2;
             this.rozmiar = rozmiar;
             this.dane = dane;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RequestFileUpload", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RequestFileUpload {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string nazwa;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string opis;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.IO.Stream dane;
+        
+        public RequestFileUpload() {
+        }
+        
+        public RequestFileUpload(string nazwa, string opis, System.IO.Stream dane) {
+            this.nazwa = nazwa;
+            this.opis = opis;
+            this.dane = dane;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ResponseFileUpload", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ResponseFileUpload {
+        
+        public ResponseFileUpload() {
         }
     }
     
@@ -197,6 +177,32 @@ namespace Klient_graficzny.ServiceReference1 {
             return ((Klient_graficzny.ServiceReference1.IStrumien)(this)).getMStreamAsync(inValue);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Klient_graficzny.ServiceReference1.ResponseFileUpload Klient_graficzny.ServiceReference1.IStrumien.UploadMStream(Klient_graficzny.ServiceReference1.RequestFileUpload request) {
+            return base.Channel.UploadMStream(request);
+        }
+        
+        public void UploadMStream(string nazwa, string opis, System.IO.Stream dane) {
+            Klient_graficzny.ServiceReference1.RequestFileUpload inValue = new Klient_graficzny.ServiceReference1.RequestFileUpload();
+            inValue.nazwa = nazwa;
+            inValue.opis = opis;
+            inValue.dane = dane;
+            Klient_graficzny.ServiceReference1.ResponseFileUpload retVal = ((Klient_graficzny.ServiceReference1.IStrumien)(this)).UploadMStream(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference1.ResponseFileUpload> Klient_graficzny.ServiceReference1.IStrumien.UploadMStreamAsync(Klient_graficzny.ServiceReference1.RequestFileUpload request) {
+            return base.Channel.UploadMStreamAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Klient_graficzny.ServiceReference1.ResponseFileUpload> UploadMStreamAsync(string nazwa, string opis, System.IO.Stream dane) {
+            Klient_graficzny.ServiceReference1.RequestFileUpload inValue = new Klient_graficzny.ServiceReference1.RequestFileUpload();
+            inValue.nazwa = nazwa;
+            inValue.opis = opis;
+            inValue.dane = dane;
+            return ((Klient_graficzny.ServiceReference1.IStrumien)(this)).UploadMStreamAsync(inValue);
+        }
+        
         public bool UploadStream(System.IO.Stream file) {
             return base.Channel.UploadStream(file);
         }
@@ -213,11 +219,11 @@ namespace Klient_graficzny.ServiceReference1 {
             return base.Channel.getStreamAsync(nazwa);
         }
         
-        public Klient_graficzny.ServiceReference1.DaneObrazkow[] Lista() {
+        public Contract12.DaneObrazkow[] Lista() {
             return base.Channel.Lista();
         }
         
-        public System.Threading.Tasks.Task<Klient_graficzny.ServiceReference1.DaneObrazkow[]> ListaAsync() {
+        public System.Threading.Tasks.Task<Contract12.DaneObrazkow[]> ListaAsync() {
             return base.Channel.ListaAsync();
         }
     }
