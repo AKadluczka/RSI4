@@ -12,219 +12,57 @@ namespace Klient_graficzny.ServiceReference2 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IStrumien")]
-    public interface IStrumien {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.ICallbackLista", CallbackContract=typeof(Klient_graficzny.ServiceReference2.ICallbackListaCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
+    public interface ICallbackLista {
         
-        // CODEGEN: Generating message contract since the wrapper name (RequestFileMessage) of message RequestFileMessage does not match the default value (getMStream)
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
-        Klient_graficzny.ServiceReference2.ResponseFileMessage getMStream(Klient_graficzny.ServiceReference2.RequestFileMessage request);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackLista/ZwrocListe")]
+        void ZwrocListe();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getMStream", ReplyAction="http://tempuri.org/IStrumien/getMStreamResponse")]
-        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference2.ResponseFileMessage> getMStreamAsync(Klient_graficzny.ServiceReference2.RequestFileMessage request);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackLista/ZwrocListe")]
+        System.Threading.Tasks.Task ZwrocListeAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICallbackListaCallback {
         
-        // CODEGEN: Generating message contract since the wrapper name (RequestFileUpload) of message RequestFileUpload does not match the default value (UploadMStream)
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadMStream", ReplyAction="http://tempuri.org/IStrumien/UploadMStreamResponse")]
-        Klient_graficzny.ServiceReference2.ResponseFileUpload UploadMStream(Klient_graficzny.ServiceReference2.RequestFileUpload request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadMStream", ReplyAction="http://tempuri.org/IStrumien/UploadMStreamResponse")]
-        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference2.ResponseFileUpload> UploadMStreamAsync(Klient_graficzny.ServiceReference2.RequestFileUpload request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
-        bool UploadStream(System.IO.Stream file);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/UploadStream", ReplyAction="http://tempuri.org/IStrumien/UploadStreamResponse")]
-        System.Threading.Tasks.Task<bool> UploadStreamAsync(System.IO.Stream file);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getStream", ReplyAction="http://tempuri.org/IStrumien/getStreamResponse")]
-        System.IO.Stream getStream(string nazwa);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/getStream", ReplyAction="http://tempuri.org/IStrumien/getStreamResponse")]
-        System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
-        Contract12.DaneObrazkow[] Lista();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStrumien/Lista", ReplyAction="http://tempuri.org/IStrumien/ListaResponse")]
-        System.Threading.Tasks.Task<Contract12.DaneObrazkow[]> ListaAsync();
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ICallbackLista/ZwrotListy")]
+        void ZwrotListy();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICallbackListaChannel : Klient_graficzny.ServiceReference2.ICallbackLista, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequestFileMessage", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class RequestFileMessage {
+    public partial class CallbackListaClient : System.ServiceModel.DuplexClientBase<Klient_graficzny.ServiceReference2.ICallbackLista>, Klient_graficzny.ServiceReference2.ICallbackLista {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string nazwa1;
-        
-        public RequestFileMessage() {
+        public CallbackListaClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public RequestFileMessage(string nazwa1) {
-            this.nazwa1 = nazwa1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ResponseFileMessage", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class ResponseFileMessage {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
-        public string nazwa2;
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
-        public long rozmiar;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.IO.Stream dane;
-        
-        public ResponseFileMessage() {
+        public CallbackListaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public ResponseFileMessage(string nazwa2, long rozmiar, System.IO.Stream dane) {
-            this.nazwa2 = nazwa2;
-            this.rozmiar = rozmiar;
-            this.dane = dane;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequestFileUpload", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class RequestFileUpload {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
-        public string nazwa;
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
-        public string opis;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public System.IO.Stream dane;
-        
-        public RequestFileUpload() {
+        public CallbackListaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public RequestFileUpload(string nazwa, string opis, System.IO.Stream dane) {
-            this.nazwa = nazwa;
-            this.opis = opis;
-            this.dane = dane;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ResponseFileUpload", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class ResponseFileUpload {
-        
-        public ResponseFileUpload() {
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IStrumienChannel : Klient_graficzny.ServiceReference2.IStrumien, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class StrumienClient : System.ServiceModel.ClientBase<Klient_graficzny.ServiceReference2.IStrumien>, Klient_graficzny.ServiceReference2.IStrumien {
-        
-        public StrumienClient() {
+        public CallbackListaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public StrumienClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public CallbackListaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
-        public StrumienClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public void ZwrocListe() {
+            base.Channel.ZwrocListe();
         }
         
-        public StrumienClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public StrumienClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Klient_graficzny.ServiceReference2.ResponseFileMessage Klient_graficzny.ServiceReference2.IStrumien.getMStream(Klient_graficzny.ServiceReference2.RequestFileMessage request) {
-            return base.Channel.getMStream(request);
-        }
-        
-        public string getMStream(string nazwa1, out long rozmiar, out System.IO.Stream dane) {
-            Klient_graficzny.ServiceReference2.RequestFileMessage inValue = new Klient_graficzny.ServiceReference2.RequestFileMessage();
-            inValue.nazwa1 = nazwa1;
-            Klient_graficzny.ServiceReference2.ResponseFileMessage retVal = ((Klient_graficzny.ServiceReference2.IStrumien)(this)).getMStream(inValue);
-            rozmiar = retVal.rozmiar;
-            dane = retVal.dane;
-            return retVal.nazwa2;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference2.ResponseFileMessage> Klient_graficzny.ServiceReference2.IStrumien.getMStreamAsync(Klient_graficzny.ServiceReference2.RequestFileMessage request) {
-            return base.Channel.getMStreamAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Klient_graficzny.ServiceReference2.ResponseFileMessage> getMStreamAsync(string nazwa1) {
-            Klient_graficzny.ServiceReference2.RequestFileMessage inValue = new Klient_graficzny.ServiceReference2.RequestFileMessage();
-            inValue.nazwa1 = nazwa1;
-            return ((Klient_graficzny.ServiceReference2.IStrumien)(this)).getMStreamAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Klient_graficzny.ServiceReference2.ResponseFileUpload Klient_graficzny.ServiceReference2.IStrumien.UploadMStream(Klient_graficzny.ServiceReference2.RequestFileUpload request) {
-            return base.Channel.UploadMStream(request);
-        }
-        
-        public void UploadMStream(string nazwa, string opis, System.IO.Stream dane) {
-            Klient_graficzny.ServiceReference2.RequestFileUpload inValue = new Klient_graficzny.ServiceReference2.RequestFileUpload();
-            inValue.nazwa = nazwa;
-            inValue.opis = opis;
-            inValue.dane = dane;
-            Klient_graficzny.ServiceReference2.ResponseFileUpload retVal = ((Klient_graficzny.ServiceReference2.IStrumien)(this)).UploadMStream(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Klient_graficzny.ServiceReference2.ResponseFileUpload> Klient_graficzny.ServiceReference2.IStrumien.UploadMStreamAsync(Klient_graficzny.ServiceReference2.RequestFileUpload request) {
-            return base.Channel.UploadMStreamAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Klient_graficzny.ServiceReference2.ResponseFileUpload> UploadMStreamAsync(string nazwa, string opis, System.IO.Stream dane) {
-            Klient_graficzny.ServiceReference2.RequestFileUpload inValue = new Klient_graficzny.ServiceReference2.RequestFileUpload();
-            inValue.nazwa = nazwa;
-            inValue.opis = opis;
-            inValue.dane = dane;
-            return ((Klient_graficzny.ServiceReference2.IStrumien)(this)).UploadMStreamAsync(inValue);
-        }
-        
-        public bool UploadStream(System.IO.Stream file) {
-            return base.Channel.UploadStream(file);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UploadStreamAsync(System.IO.Stream file) {
-            return base.Channel.UploadStreamAsync(file);
-        }
-        
-        public System.IO.Stream getStream(string nazwa) {
-            return base.Channel.getStream(nazwa);
-        }
-        
-        public System.Threading.Tasks.Task<System.IO.Stream> getStreamAsync(string nazwa) {
-            return base.Channel.getStreamAsync(nazwa);
-        }
-        
-        public Contract12.DaneObrazkow[] Lista() {
-            return base.Channel.Lista();
-        }
-        
-        public System.Threading.Tasks.Task<Contract12.DaneObrazkow[]> ListaAsync() {
-            return base.Channel.ListaAsync();
+        public System.Threading.Tasks.Task ZwrocListeAsync() {
+            return base.Channel.ZwrocListeAsync();
         }
     }
 }

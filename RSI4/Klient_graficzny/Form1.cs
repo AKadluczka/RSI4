@@ -1,5 +1,6 @@
 ﻿using Contract12;
 using Klient_graficzny.ServiceReference1;
+using Klient_graficzny.ServiceReference2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,11 +18,19 @@ namespace Klient_graficzny
 {
     public partial class Form1 : Form
     {
+        
         ServiceReference1.StrumienClient client2;
+
+        CallbackListaClient callbackLista;
         public Form1()
         {
+            CallbackHandler mojCallbackHandler = new CallbackHandler();
+            InstanceContext instanceContext = new InstanceContext(mojCallbackHandler);
+            callbackLista = new CallbackListaClient(instanceContext);
+
             client2 = new ServiceReference1.StrumienClient();
             InitializeComponent();
+           
         }
         /*
         protected void Page_Load(object sender, EventArgs e)
@@ -182,13 +193,36 @@ namespace Klient_graficzny
 
         private void button7_Click(object sender, EventArgs e)
         {
-            String name = textBox1.Text;
-            Download2(client2, name);
+            var checkedButton = listBox1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            Download2(client2, checkedButton.Text);
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            label3.Text = "Trwa konwersja prosze czekac";
+            callbackLista.ZwrocListe();
+            
+            //label3.Text = "Przekonwertowano";
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static void ustawLabel() {
+            label3.Text = "przekonwertowano";
+        }
     }
+    
 }

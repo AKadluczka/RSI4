@@ -13,16 +13,16 @@ namespace Host12
             Uri baseAddress = new Uri("http://localhost:8080/NazwaBazowa");
 
             ServiceHost mojHost = new ServiceHost(typeof(MojStrumien), baseAddress);
-           
+
             Uri adress2 = new Uri("http://localhost:8080/InnySerwis");
-            ServiceHost drugiHost = new ServiceHost(typeof(MojStrumien), adress2);
+            ServiceHost drugiHost = new ServiceHost(typeof(CallbackLista), adress2);
             WSDualHttpBinding binding2 = new WSDualHttpBinding();
 
 
 
             try
             {
-                ServiceEndpoint endpoint2 = drugiHost.AddServiceEndpoint(typeof(IStrumien), binding2, "Callback Lista");
+                ServiceEndpoint endpoint2 = drugiHost.AddServiceEndpoint(typeof(ICallbackLista), binding2, "Callback Lista");
 
                 BasicHttpBinding b = new BasicHttpBinding();
                 b.TransferMode = TransferMode.Streamed;
@@ -73,4 +73,4 @@ namespace Host12
     }
 }
 
-    
+

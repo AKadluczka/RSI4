@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
-namespace Contract12 { 
+
+namespace Contract12
+{
 
     [ServiceContract]
-public interface IStrumien
-{
+    public interface IStrumien
+    {
 
         [OperationContract]
         ResponseFileMessage getMStream(RequestFileMessage request);
@@ -22,7 +22,7 @@ public interface IStrumien
         bool UploadStream(Stream file);
 
         [OperationContract]
-         System.IO.Stream getStream(String nazwa);
+        System.IO.Stream getStream(String nazwa);
 
         [OperationContract]
         List<DaneObrazkow> Lista();
@@ -39,12 +39,13 @@ public interface IStrumien
     public interface ICallbackHandler
     {
         [OperationContract(IsOneWay = true)]
-        void ZwrotListy(List<DaneObrazkow> result);
+        void ZwrotListy();
 
     }
 
     [MessageContract]
-    public class RequestFileUpload {
+    public class RequestFileUpload
+    {
         [MessageHeader]
         public string nazwa;
         [MessageHeader]
@@ -55,7 +56,8 @@ public interface IStrumien
 
 
     [MessageContract]
-    public class ResponseFileUpload {
+    public class ResponseFileUpload
+    {
         public string msg;
     }
 
@@ -63,9 +65,10 @@ public interface IStrumien
 
 
     [MessageContract]
-    public class RequestFileMessage {
+    public class RequestFileMessage
+    {
         [MessageBodyMember]
-        public string nazwa1;      
+        public string nazwa1;
     }
 
     [MessageContract]

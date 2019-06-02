@@ -19,15 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/NazwaBazowa" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/InnySerwis" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NazwaBazowa.xsd" MetadataType="Schema" ID="6510f96a-d2c4-4dd7-9da6-fae334bfb226" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd0" />
-    <MetadataFile FileName="NazwaBazowa1.xsd" MetadataType="Schema" ID="af667bb2-1fbb-4d26-9f62-0991c6ba6a4e" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd1" />
-    <MetadataFile FileName="NazwaBazowa2.xsd" MetadataType="Schema" ID="608de741-d6bf-4b9a-9b96-a6c8376f4401" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd2" />
-    <MetadataFile FileName="NazwaBazowa3.xsd" MetadataType="Schema" ID="227b6496-1dc9-479e-b6c9-2a986421cf59" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?xsd=xsd3" />
-    <MetadataFile FileName="MojStrumien.wsdl" MetadataType="Wsdl" ID="d982147d-206f-40dc-bec9-dee36f98c4c6" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?wsdl" />
-    <MetadataFile FileName="NazwaBazowa.disco" MetadataType="Disco" ID="069089c1-164b-4a2b-b48f-eda39b164197" SourceId="1" SourceUrl="http://localhost:8080/NazwaBazowa?disco" />
+    <MetadataFile FileName="MojStrumien1.wsdl" MetadataType="Wsdl" ID="0fd1e784-85c5-4ea9-903e-51c56ba93859" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?wsdl" />
+    <MetadataFile FileName="InnySerwis.disco" MetadataType="Disco" ID="b89d556e-83fa-41cb-91e3-a1e96cae7b32" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?disco" />
+    <MetadataFile FileName="InnySerwis1.xsd" MetadataType="Schema" ID="99ac9850-ec8e-42e1-9e91-dd0e09cef994" SourceId="1" SourceUrl="http://localhost:8080/InnySerwis?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
