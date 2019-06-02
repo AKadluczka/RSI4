@@ -44,10 +44,7 @@ C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\H
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Contract12.pdb
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Contract12.dll.config
-C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Host12.pdb
-C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Host12.exe.config
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csprojAssemblyReference.cache
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.Form1.resources
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.Properties.Resources.resources
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csproj.GenerateResource.cache
@@ -55,3 +52,6 @@ C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\K
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csproj.CopyComplete
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.exe
 C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.pdb
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Host12.pdb
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\bin\Debug\Host12.exe.config
+C:\Users\Adam Kadłuczka\Documents\GitHub\RSI4\RSI4\Klient_graficzny\obj\Debug\Klient_graficzny.csprojAssemblyReference.cache

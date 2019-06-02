@@ -50,10 +50,11 @@ namespace Klient_graficzny
 
         private void button1_Click(object sander, EventArgs e)
         {
+            Download2(client2);
              DaneObrazkow[] list = client2.Lista();
             /*
              DaneObrazkow do1 = new DaneObrazkow();
-             do1.nazwa = "nazwa1";
+             do1.nazwa = "klient.jpg";
              do1.opis = "opis";
 
              DaneObrazkow do2 = new DaneObrazkow();
@@ -86,13 +87,13 @@ namespace Klient_graficzny
             {
                     if (i == 0)
                     {
-                        rb.Text = list[i].nazwa + ", " + list[i].opis;
+                        rb.Text = list[i].nazwa;
                         listBox1.Controls.Add(rb);
                     }
                     else
                     {
                         RadioButton rbn = new RadioButton();
-                        rbn.Text = list[i].nazwa+", "+ list[i].opis;
+                        rbn.Text = list[i].nazwa;
                         rbn.Location = new System.Drawing.Point(rb.Location.X, rb.Location.Y + (i*rb.Height));
                         listBox1.Controls.Add(rbn);
                     }
@@ -105,11 +106,15 @@ namespace Klient_graficzny
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            // String nazwa = listBox1.Text;
-            String nazwa = "klient.jpg";
 
-            String filePath = Path.Combine(System.Environment.CurrentDirectory,nazwa);
+            int index = listBox1.SelectedIndex;
+            DaneObrazkow[] list = client2.Lista();
+
+            String name = list[index].nazwa;
+
+            //String nazwa = "klient.jpg";
+
+            String filePath = Path.Combine(System.Environment.CurrentDirectory,name);
             
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
@@ -143,6 +148,12 @@ namespace Klient_graficzny
         private void button4_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            String name = textBox1.Text;
+            Upload(client2, name);
         }
     }
 }
