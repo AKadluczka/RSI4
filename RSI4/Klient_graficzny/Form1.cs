@@ -176,7 +176,7 @@ namespace Klient_graficzny
             if (temp == client2.Lista().Length)
                 label6.Text = "Upload nieudany, plik juz istnieje";
             else
-                label6.Text = "Zuploadowano " + textBox2.Text;
+                label6.Text = "Zuploadowano " + name;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

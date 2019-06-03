@@ -53,6 +53,7 @@ namespace Contract12
 
         public void ZwrocListe()
         {
+            Console.Write("Wywołano Callback");
             Thread.Sleep(5000);
             callback.ZwrotListy();
         }
@@ -112,7 +113,7 @@ namespace Contract12
             return myFile;
         }
 
-        public ResponseFileMessage getMStream(RequestFileMessage request) //nie wiem jak to tu ma byc zrobione ;/
+        public ResponseFileMessage getMStream(RequestFileMessage request) 
         {
             ResponseFileMessage wynik = new ResponseFileMessage();
             string nazwa = request.nazwa1;

@@ -67,8 +67,6 @@ namespace Klient_graficzny
             this.button2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -142,28 +140,6 @@ namespace Klient_graficzny
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(517, 11);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 33);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(517, 48);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 32);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(312, 305);
@@ -219,7 +195,7 @@ namespace Klient_graficzny
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(498, 126);
+            this.button8.Location = new System.Drawing.Point(502, 9);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 20;
@@ -230,7 +206,7 @@ namespace Klient_graficzny
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(498, 165);
+            label3.Location = new System.Drawing.Point(502, 48);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(0, 13);
             label3.TabIndex = 21;
@@ -286,8 +262,6 @@ namespace Klient_graficzny
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -382,8 +356,6 @@ namespace Klient_graficzny
         }
 
         private Button button5;
-        private Button button3;
-        private Button button4;
         private ListBox listBox1;
 
         static void ZapiszPlik(System.IO.Stream instream, string filePath)
